@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E65F9851E28CEEA0021D77D /* LazyNetForIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9841E28CEEA0021D77D /* LazyNetForIOSTests.m */; };
+		4E65F9901E28CEEA0021D77D /* LazyNetForIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F98F1E28CEEA0021D77D /* LazyNetForIOSUITests.m */; };
+		4E65F9A61E28CF570021D77D /* LazyNetLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4E65F9A31E28CF570021D77D /* LazyNetLibrary.h */; };
+		4E65F9C91E28D2200021D77D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9BE1E28D2200021D77D /* AppDelegate.m */; };
+		4E65F9CA1E28D2200021D77D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E65F9BF1E28D2200021D77D /* Assets.xcassets */; };
+		4E65F9CB1E28D2200021D77D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E65F9C11E28D2200021D77D /* LaunchScreen.storyboard */; };
+		4E65F9CC1E28D2200021D77D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E65F9C31E28D2200021D77D /* Main.storyboard */; };
+		4E65F9CD1E28D2200021D77D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E65F9C51E28D2200021D77D /* Info.plist */; };
+		4E65F9CE1E28D2200021D77D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9C61E28D2200021D77D /* main.m */; };
+		4E65F9CF1E28D2200021D77D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9C81E28D2200021D77D /* ViewController.m */; };
+		4E65F9E11E28D26B0021D77D /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9D11E28D26B0021D77D /* HttpClient.m */; };
+		4E65F9E21E28D26B0021D77D /* JSONResponseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9D31E28D26B0021D77D /* JSONResponseProcess.m */; };
+		4E65F9E31E28D26B0021D77D /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9D51E28D26B0021D77D /* JSONUtils.m */; };
+		4E65F9E41E28D26B0021D77D /* LazyHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9D71E28D26B0021D77D /* LazyHttpClient.m */; };
+		4E65F9E51E28D26B0021D77D /* NSDictionary+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9D91E28D26B0021D77D /* NSDictionary+Unicode.m */; };
+		4E65F9E61E28D26B0021D77D /* NSString+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9DB1E28D26B0021D77D /* NSString+Coding.m */; };
+		4E65F9E71E28D26B0021D77D /* RequestParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9DD1E28D26B0021D77D /* RequestParam.m */; };
+		4E65F9E81E28D26B0021D77D /* ResponseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65F9E01E28D26B0021D77D /* ResponseProcess.m */; };
+		F37205D0D429691D8E68AE32 /* libPods-LazyNetLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D49763124F16C7038E94F36 /* libPods-LazyNetLibrary.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E65F9811E28CEEA0021D77D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E65F95F1E28CEEA0021D77D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E65F9661E28CEEA0021D77D;
+			remoteInfo = LazyNetForIOS;
+		};
+		4E65F98C1E28CEEA0021D77D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E65F95F1E28CEEA0021D77D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E65F9661E28CEEA0021D77D;
+			remoteInfo = LazyNetForIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E65F99F1E28CF570021D77D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				4E65F9A61E28CF570021D77D /* LazyNetLibrary.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4E65F9671E28CEEA0021D77D /* LazyNetForIOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyNetForIOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E65F9801E28CEEA0021D77D /* LazyNetForIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyNetForIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E65F9841E28CEEA0021D77D /* LazyNetForIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyNetForIOSTests.m; sourceTree = "<group>"; };
+		4E65F9861E28CEEA0021D77D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E65F98B1E28CEEA0021D77D /* LazyNetForIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyNetForIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E65F98F1E28CEEA0021D77D /* LazyNetForIOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyNetForIOSUITests.m; sourceTree = "<group>"; };
+		4E65F9911E28CEEA0021D77D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E65F9A11E28CF570021D77D /* libLazyNetLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLazyNetLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E65F9A31E28CF570021D77D /* LazyNetLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyNetLibrary.h; sourceTree = "<group>"; };
+		4E65F9BD1E28D2200021D77D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4E65F9BE1E28D2200021D77D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4E65F9BF1E28D2200021D77D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E65F9C21E28D2200021D77D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E65F9C41E28D2200021D77D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		4E65F9C51E28D2200021D77D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E65F9C61E28D2200021D77D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4E65F9C71E28D2200021D77D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4E65F9C81E28D2200021D77D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4E65F9D01E28D26B0021D77D /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		4E65F9D11E28D26B0021D77D /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		4E65F9D21E28D26B0021D77D /* JSONResponseProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONResponseProcess.h; sourceTree = "<group>"; };
+		4E65F9D31E28D26B0021D77D /* JSONResponseProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONResponseProcess.m; sourceTree = "<group>"; };
+		4E65F9D41E28D26B0021D77D /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
+		4E65F9D51E28D26B0021D77D /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
+		4E65F9D61E28D26B0021D77D /* LazyHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyHttpClient.h; sourceTree = "<group>"; };
+		4E65F9D71E28D26B0021D77D /* LazyHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyHttpClient.m; sourceTree = "<group>"; };
+		4E65F9D81E28D26B0021D77D /* NSDictionary+Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Unicode.h"; sourceTree = "<group>"; };
+		4E65F9D91E28D26B0021D77D /* NSDictionary+Unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Unicode.m"; sourceTree = "<group>"; };
+		4E65F9DA1E28D26B0021D77D /* NSString+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Coding.h"; sourceTree = "<group>"; };
+		4E65F9DB1E28D26B0021D77D /* NSString+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Coding.m"; sourceTree = "<group>"; };
+		4E65F9DC1E28D26B0021D77D /* RequestParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestParam.h; sourceTree = "<group>"; };
+		4E65F9DD1E28D26B0021D77D /* RequestParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestParam.m; sourceTree = "<group>"; };
+		4E65F9DE1E28D26B0021D77D /* ResponseCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseCallback.h; sourceTree = "<group>"; };
+		4E65F9DF1E28D26B0021D77D /* ResponseProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseProcess.h; sourceTree = "<group>"; };
+		4E65F9E01E28D26B0021D77D /* ResponseProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseProcess.m; sourceTree = "<group>"; };
+		6D49763124F16C7038E94F36 /* libPods-LazyNetLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LazyNetLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A46768F018C69F5F37671798 /* Pods-LazyNetLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyNetLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyNetLibrary/Pods-LazyNetLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		DE5A63BDE3A7398E97C10716 /* Pods-LazyNetLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyNetLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyNetLibrary/Pods-LazyNetLibrary.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E65F9641E28CEEA0021D77D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E65F97D1E28CEEA0021D77D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E65F9881E28CEEA0021D77D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E65F99E1E28CF570021D77D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37205D0D429691D8E68AE32 /* libPods-LazyNetLibrary.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E65F95E1E28CEEA0021D77D = {
+			isa = PBXGroup;
+			children = (
+				4E65F9691E28CEEA0021D77D /* LazyNetForIOSDemo */,
+				4E65F9A21E28CF570021D77D /* LazyNetLibrary */,
+				4E65F9831E28CEEA0021D77D /* LazyNetForIOSTests */,
+				4E65F98E1E28CEEA0021D77D /* LazyNetForIOSUITests */,
+				4E65F9681E28CEEA0021D77D /* Products */,
+				BCAD4E836BF2DF6AA89D64B9 /* Pods */,
+				F8892B8369324AF77E2E0DAA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4E65F9681E28CEEA0021D77D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E65F9671E28CEEA0021D77D /* LazyNetForIOSDemo.app */,
+				4E65F9801E28CEEA0021D77D /* LazyNetForIOSTests.xctest */,
+				4E65F98B1E28CEEA0021D77D /* LazyNetForIOSUITests.xctest */,
+				4E65F9A11E28CF570021D77D /* libLazyNetLibrary.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E65F9691E28CEEA0021D77D /* LazyNetForIOSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4E65F9BD1E28D2200021D77D /* AppDelegate.h */,
+				4E65F9BE1E28D2200021D77D /* AppDelegate.m */,
+				4E65F9BF1E28D2200021D77D /* Assets.xcassets */,
+				4E65F9C01E28D2200021D77D /* Base.lproj */,
+				4E65F9C51E28D2200021D77D /* Info.plist */,
+				4E65F9C61E28D2200021D77D /* main.m */,
+				4E65F9C71E28D2200021D77D /* ViewController.h */,
+				4E65F9C81E28D2200021D77D /* ViewController.m */,
+			);
+			name = LazyNetForIOSDemo;
+			path = LazyNetForIOS;
+			sourceTree = "<group>";
+		};
+		4E65F9831E28CEEA0021D77D /* LazyNetForIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E65F9841E28CEEA0021D77D /* LazyNetForIOSTests.m */,
+				4E65F9861E28CEEA0021D77D /* Info.plist */,
+			);
+			path = LazyNetForIOSTests;
+			sourceTree = "<group>";
+		};
+		4E65F98E1E28CEEA0021D77D /* LazyNetForIOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4E65F98F1E28CEEA0021D77D /* LazyNetForIOSUITests.m */,
+				4E65F9911E28CEEA0021D77D /* Info.plist */,
+			);
+			path = LazyNetForIOSUITests;
+			sourceTree = "<group>";
+		};
+		4E65F9A21E28CF570021D77D /* LazyNetLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				4E65F9D01E28D26B0021D77D /* HttpClient.h */,
+				4E65F9D11E28D26B0021D77D /* HttpClient.m */,
+				4E65F9D21E28D26B0021D77D /* JSONResponseProcess.h */,
+				4E65F9D31E28D26B0021D77D /* JSONResponseProcess.m */,
+				4E65F9D41E28D26B0021D77D /* JSONUtils.h */,
+				4E65F9D51E28D26B0021D77D /* JSONUtils.m */,
+				4E65F9D61E28D26B0021D77D /* LazyHttpClient.h */,
+				4E65F9D71E28D26B0021D77D /* LazyHttpClient.m */,
+				4E65F9D81E28D26B0021D77D /* NSDictionary+Unicode.h */,
+				4E65F9D91E28D26B0021D77D /* NSDictionary+Unicode.m */,
+				4E65F9DA1E28D26B0021D77D /* NSString+Coding.h */,
+				4E65F9DB1E28D26B0021D77D /* NSString+Coding.m */,
+				4E65F9DC1E28D26B0021D77D /* RequestParam.h */,
+				4E65F9DD1E28D26B0021D77D /* RequestParam.m */,
+				4E65F9DE1E28D26B0021D77D /* ResponseCallback.h */,
+				4E65F9DF1E28D26B0021D77D /* ResponseProcess.h */,
+				4E65F9E01E28D26B0021D77D /* ResponseProcess.m */,
+				4E65F9A31E28CF570021D77D /* LazyNetLibrary.h */,
+			);
+			path = LazyNetLibrary;
+			sourceTree = "<group>";
+		};
+		4E65F9C01E28D2200021D77D /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4E65F9C11E28D2200021D77D /* LaunchScreen.storyboard */,
+				4E65F9C31E28D2200021D77D /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		BCAD4E836BF2DF6AA89D64B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A46768F018C69F5F37671798 /* Pods-LazyNetLibrary.debug.xcconfig */,
+				DE5A63BDE3A7398E97C10716 /* Pods-LazyNetLibrary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F8892B8369324AF77E2E0DAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D49763124F16C7038E94F36 /* libPods-LazyNetLibrary.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E65F9661E28CEEA0021D77D /* LazyNetForIOSDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E65F9941E28CEEA0021D77D /* Build configuration list for PBXNativeTarget "LazyNetForIOSDemo" */;
+			buildPhases = (
+				4E65F9631E28CEEA0021D77D /* Sources */,
+				4E65F9641E28CEEA0021D77D /* Frameworks */,
+				4E65F9651E28CEEA0021D77D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LazyNetForIOSDemo;
+			productName = LazyNetForIOS;
+			productReference = 4E65F9671E28CEEA0021D77D /* LazyNetForIOSDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4E65F97F1E28CEEA0021D77D /* LazyNetForIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E65F9971E28CEEA0021D77D /* Build configuration list for PBXNativeTarget "LazyNetForIOSTests" */;
+			buildPhases = (
+				4E65F97C1E28CEEA0021D77D /* Sources */,
+				4E65F97D1E28CEEA0021D77D /* Frameworks */,
+				4E65F97E1E28CEEA0021D77D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E65F9821E28CEEA0021D77D /* PBXTargetDependency */,
+			);
+			name = LazyNetForIOSTests;
+			productName = LazyNetForIOSTests;
+			productReference = 4E65F9801E28CEEA0021D77D /* LazyNetForIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4E65F98A1E28CEEA0021D77D /* LazyNetForIOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E65F99A1E28CEEA0021D77D /* Build configuration list for PBXNativeTarget "LazyNetForIOSUITests" */;
+			buildPhases = (
+				4E65F9871E28CEEA0021D77D /* Sources */,
+				4E65F9881E28CEEA0021D77D /* Frameworks */,
+				4E65F9891E28CEEA0021D77D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E65F98D1E28CEEA0021D77D /* PBXTargetDependency */,
+			);
+			name = LazyNetForIOSUITests;
+			productName = LazyNetForIOSUITests;
+			productReference = 4E65F98B1E28CEEA0021D77D /* LazyNetForIOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		4E65F9A01E28CF570021D77D /* LazyNetLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E65F9A71E28CF570021D77D /* Build configuration list for PBXNativeTarget "LazyNetLibrary" */;
+			buildPhases = (
+				40DBDAE58F1EEF14578A2F97 /* [CP] Check Pods Manifest.lock */,
+				4E65F99D1E28CF570021D77D /* Sources */,
+				4E65F99E1E28CF570021D77D /* Frameworks */,
+				4E65F99F1E28CF570021D77D /* CopyFiles */,
+				6D4E5760D520D4ABB8E155DD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LazyNetLibrary;
+			productName = LazyNetLibrary;
+			productReference = 4E65F9A11E28CF570021D77D /* libLazyNetLibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E65F95F1E28CEEA0021D77D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = jiangyufeng;
+				TargetAttributes = {
+					4E65F9661E28CEEA0021D77D = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					4E65F97F1E28CEEA0021D77D = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4E65F9661E28CEEA0021D77D;
+					};
+					4E65F98A1E28CEEA0021D77D = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4E65F9661E28CEEA0021D77D;
+					};
+					4E65F9A01E28CF570021D77D = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4E65F9621E28CEEA0021D77D /* Build configuration list for PBXProject "LazyNetForIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E65F95E1E28CEEA0021D77D;
+			productRefGroup = 4E65F9681E28CEEA0021D77D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E65F9661E28CEEA0021D77D /* LazyNetForIOSDemo */,
+				4E65F97F1E28CEEA0021D77D /* LazyNetForIOSTests */,
+				4E65F98A1E28CEEA0021D77D /* LazyNetForIOSUITests */,
+				4E65F9A01E28CF570021D77D /* LazyNetLibrary */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E65F9651E28CEEA0021D77D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E65F9CD1E28D2200021D77D /* Info.plist in Resources */,
+				4E65F9CC1E28D2200021D77D /* Main.storyboard in Resources */,
+				4E65F9CA1E28D2200021D77D /* Assets.xcassets in Resources */,
+				4E65F9CB1E28D2200021D77D /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E65F97E1E28CEEA0021D77D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E65F9891E28CEEA0021D77D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40DBDAE58F1EEF14578A2F97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6D4E5760D520D4ABB8E155DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyNetLibrary/Pods-LazyNetLibrary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E65F9631E28CEEA0021D77D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E65F9CF1E28D2200021D77D /* ViewController.m in Sources */,
+				4E65F9CE1E28D2200021D77D /* main.m in Sources */,
+				4E65F9C91E28D2200021D77D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E65F97C1E28CEEA0021D77D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E65F9851E28CEEA0021D77D /* LazyNetForIOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E65F9871E28CEEA0021D77D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E65F9901E28CEEA0021D77D /* LazyNetForIOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E65F99D1E28CF570021D77D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E65F9E51E28D26B0021D77D /* NSDictionary+Unicode.m in Sources */,
+				4E65F9E61E28D26B0021D77D /* NSString+Coding.m in Sources */,
+				4E65F9E81E28D26B0021D77D /* ResponseProcess.m in Sources */,
+				4E65F9E31E28D26B0021D77D /* JSONUtils.m in Sources */,
+				4E65F9E21E28D26B0021D77D /* JSONResponseProcess.m in Sources */,
+				4E65F9E41E28D26B0021D77D /* LazyHttpClient.m in Sources */,
+				4E65F9E71E28D26B0021D77D /* RequestParam.m in Sources */,
+				4E65F9E11E28D26B0021D77D /* HttpClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E65F9821E28CEEA0021D77D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E65F9661E28CEEA0021D77D /* LazyNetForIOSDemo */;
+			targetProxy = 4E65F9811E28CEEA0021D77D /* PBXContainerItemProxy */;
+		};
+		4E65F98D1E28CEEA0021D77D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E65F9661E28CEEA0021D77D /* LazyNetForIOSDemo */;
+			targetProxy = 4E65F98C1E28CEEA0021D77D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4E65F9C11E28D2200021D77D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E65F9C21E28D2200021D77D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4E65F9C31E28D2200021D77D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E65F9C41E28D2200021D77D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E65F9921E28CEEA0021D77D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4E65F9931E28CEEA0021D77D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E65F9951E28CEEA0021D77D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LazyNetForIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetForIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4E65F9961E28CEEA0021D77D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LazyNetForIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetForIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4E65F9981E28CEEA0021D77D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LazyNetForIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetForIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyNetForIOS.app/LazyNetForIOS";
+			};
+			name = Debug;
+		};
+		4E65F9991E28CEEA0021D77D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LazyNetForIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetForIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyNetForIOS.app/LazyNetForIOS";
+			};
+			name = Release;
+		};
+		4E65F99B1E28CEEA0021D77D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LazyNetForIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetForIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LazyNetForIOS;
+			};
+			name = Debug;
+		};
+		4E65F99C1E28CEEA0021D77D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LazyNetForIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetForIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LazyNetForIOS;
+			};
+			name = Release;
+		};
+		4E65F9A81E28CF570021D77D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A46768F018C69F5F37671798 /* Pods-LazyNetLibrary.debug.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4E65F9A91E28CF570021D77D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE5A63BDE3A7398E97C10716 /* Pods-LazyNetLibrary.release.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E65F9621E28CEEA0021D77D /* Build configuration list for PBXProject "LazyNetForIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E65F9921E28CEEA0021D77D /* Debug */,
+				4E65F9931E28CEEA0021D77D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E65F9941E28CEEA0021D77D /* Build configuration list for PBXNativeTarget "LazyNetForIOSDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E65F9951E28CEEA0021D77D /* Debug */,
+				4E65F9961E28CEEA0021D77D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E65F9971E28CEEA0021D77D /* Build configuration list for PBXNativeTarget "LazyNetForIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E65F9981E28CEEA0021D77D /* Debug */,
+				4E65F9991E28CEEA0021D77D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E65F99A1E28CEEA0021D77D /* Build configuration list for PBXNativeTarget "LazyNetForIOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E65F99B1E28CEEA0021D77D /* Debug */,
+				4E65F99C1E28CEEA0021D77D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E65F9A71E28CF570021D77D /* Build configuration list for PBXNativeTarget "LazyNetLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E65F9A81E28CF570021D77D /* Debug */,
+				4E65F9A91E28CF570021D77D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E65F95F1E28CEEA0021D77D /* Project object */;
+}
