@@ -6,8 +6,14 @@
 //  Copyright © 2017年 jiangyufeng. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface LazyNetLibrary : NSObject
+//! Project version number for LazyNetLibrary.
+FOUNDATION_EXPORT double LazyNetLibraryVersionNumber;
 
-@end
+//! Project version string for LazyNetLibrary.
+FOUNDATION_EXPORT const unsigned char LazyNetLibraryVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <LazyNetLibrary/PublicHeader.h>
+
+

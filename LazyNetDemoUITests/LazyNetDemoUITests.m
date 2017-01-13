@@ -1,6 +1,6 @@
 //
-//  LazyNetForIOSUITests.m
-//  LazyNetForIOSUITests
+//  LazyNetDemoUITests.m
+//  LazyNetDemoUITests
 //
 //  Created by 江钰锋 on 2017/1/13.
 //  Copyright © 2017年 jiangyufeng. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface LazyNetForIOSUITests : XCTestCase
+@interface LazyNetDemoUITests : XCTestCase
 
 @end
 
-@implementation LazyNetForIOSUITests
+@implementation LazyNetDemoUITests
 
 - (void)setUp {
     [super setUp];

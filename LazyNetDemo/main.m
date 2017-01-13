@@ -1,6 +1,6 @@
 //
 //  main.m
-//  LazyNetForIOS
+//  LazyNetDemo
 //
 //  Created by 江钰锋 on 2017/1/13.
 //  Copyright © 2017年 jiangyufeng. All rights reserved.

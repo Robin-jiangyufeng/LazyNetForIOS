@@ -1,2 +1,0 @@
-# LazyNetForIOS
-ios网络请求框架,基于AFNetworking封装,其中缓存模块依赖TMCache,JSON解析模块依赖MJExtension
