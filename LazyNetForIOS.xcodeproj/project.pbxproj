@@ -28,8 +28,6 @@
 		4E65FBD51E28E3110021D77D /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65FBC41E28E3110021D77D /* JSONUtils.m */; };
 		4E65FBD61E28E3110021D77D /* LazyHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E65FBC51E28E3110021D77D /* LazyHttpClient.h */; };
 		4E65FBD71E28E3110021D77D /* LazyHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65FBC61E28E3110021D77D /* LazyHttpClient.m */; };
-		4E65FBD81E28E3110021D77D /* NSDictionary+Unicode.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E65FBC71E28E3110021D77D /* NSDictionary+Unicode.h */; };
-		4E65FBD91E28E3110021D77D /* NSDictionary+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65FBC81E28E3110021D77D /* NSDictionary+Unicode.m */; };
 		4E65FBDA1E28E3110021D77D /* NSString+Coding.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E65FBC91E28E3110021D77D /* NSString+Coding.h */; };
 		4E65FBDB1E28E3110021D77D /* NSString+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65FBCA1E28E3110021D77D /* NSString+Coding.m */; };
 		4E65FBDC1E28E3110021D77D /* RequestParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E65FBCB1E28E3110021D77D /* RequestParam.h */; };
@@ -124,8 +122,6 @@
 		4E65FBC41E28E3110021D77D /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		4E65FBC51E28E3110021D77D /* LazyHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyHttpClient.h; sourceTree = "<group>"; };
 		4E65FBC61E28E3110021D77D /* LazyHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyHttpClient.m; sourceTree = "<group>"; };
-		4E65FBC71E28E3110021D77D /* NSDictionary+Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Unicode.h"; sourceTree = "<group>"; };
-		4E65FBC81E28E3110021D77D /* NSDictionary+Unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Unicode.m"; sourceTree = "<group>"; };
 		4E65FBC91E28E3110021D77D /* NSString+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Coding.h"; sourceTree = "<group>"; };
 		4E65FBCA1E28E3110021D77D /* NSString+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Coding.m"; sourceTree = "<group>"; };
 		4E65FBCB1E28E3110021D77D /* RequestParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestParam.h; sourceTree = "<group>"; };
@@ -267,8 +263,6 @@
 				4E65FBC41E28E3110021D77D /* JSONUtils.m */,
 				4E65FBC51E28E3110021D77D /* LazyHttpClient.h */,
 				4E65FBC61E28E3110021D77D /* LazyHttpClient.m */,
-				4E65FBC71E28E3110021D77D /* NSDictionary+Unicode.h */,
-				4E65FBC81E28E3110021D77D /* NSDictionary+Unicode.m */,
 				4E65FBC91E28E3110021D77D /* NSString+Coding.h */,
 				4E65FBCA1E28E3110021D77D /* NSString+Coding.m */,
 				4E65FBCB1E28E3110021D77D /* RequestParam.h */,
@@ -309,7 +303,6 @@
 				4E65FBDA1E28E3110021D77D /* NSString+Coding.h in Headers */,
 				4E65FBDE1E28E3110021D77D /* ResponseCallback.h in Headers */,
 				4E65FBD61E28E3110021D77D /* LazyHttpClient.h in Headers */,
-				4E65FBD81E28E3110021D77D /* NSDictionary+Unicode.h in Headers */,
 				4E65FBD41E28E3110021D77D /* JSONUtils.h in Headers */,
 				4E65FBB31E28E2330021D77D /* LazyNetLibrary.h in Headers */,
 				4E65FBD01E28E3110021D77D /* HttpClient.h in Headers */,
@@ -577,7 +570,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E65FBD91E28E3110021D77D /* NSDictionary+Unicode.m in Sources */,
 				4E65FBDB1E28E3110021D77D /* NSString+Coding.m in Sources */,
 				4E65FBE01E28E3110021D77D /* ResponseProcess.m in Sources */,
 				4E65FBD51E28E3110021D77D /* JSONUtils.m in Sources */,

@@ -26,21 +26,10 @@
     self=[super init];
     if (self) {
         _viewControllerTasks=[[NSMutableDictionary alloc]init];
+        [self setRequestSerializer:[AFJSONRequestSerializer serializer]];
+        [self setResponseSerializer:[AFJSONResponseSerializer serializer]];
     }
     return self;
-}
-
--(void)POST_JSON:(NSString*)VCId
-           param:(RequestParam*)param
-   responseClazz:(Class)clazz
- loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
-callbackdelegate:(id<ResponseCallbackDelegate>)delegate
-{
-    [self setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    [self setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [self doPost:param
- responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate callbackdelegate:delegate];
-    [self addViewControllerTask:VCId withRequestId:[param requestId]];
 }
 
 -(void)GET_JSON:(NSString*)VCId
@@ -51,7 +40,6 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
          success:(RequestSuccessBlock)success
             fail:(RequestFailBlock)fail
 {
-    [self setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [self doGet:param
  responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate
        loadCache:loadCache
@@ -66,8 +54,18 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
 callbackdelegate:(id<ResponseCallbackDelegate>)delegate
 {
-    [self setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [self doGet:param
+ responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate callbackdelegate:delegate];
+    [self addViewControllerTask:VCId withRequestId:[param requestId]];
+}
+
+-(void)POST_JSON:(NSString*)VCId
+           param:(RequestParam*)param
+   responseClazz:(Class)clazz
+ loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
+callbackdelegate:(id<ResponseCallbackDelegate>)delegate
+{
+    [self doPost:param
  responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate callbackdelegate:delegate];
     [self addViewControllerTask:VCId withRequestId:[param requestId]];
 }
@@ -80,8 +78,6 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
          success:(RequestSuccessBlock)success
             fail:(RequestFailBlock)fail
 {
-    [self setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    [self setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [self doPost:param
  responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate
        loadCache:loadCache

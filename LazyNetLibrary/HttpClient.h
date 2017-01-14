@@ -66,7 +66,6 @@ typedef NSURLSessionTask LazyBURLSessionTask;
 
 /***
  * 获取请求实际操作工具
- * @param requestSerializer
  */
 -(AFHTTPRequestSerializer*)getRequestSerializer;
 
