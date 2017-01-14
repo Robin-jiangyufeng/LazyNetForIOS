@@ -85,8 +85,6 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate;
  *
  * @param VCId view控制器唯一id
  * @param requestId      报文id
- * @throws
- * @see [类、类#方法、类#成员]
  */
 -(void)addViewControllerTask:(NSString*)VCId
                withRequestId:(NSString*)requestId;
@@ -94,7 +92,7 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate;
 /**
  * 取消与对应ViewController相关的所有请求
  *
- * @param VC
+ * @param VCId
  */
 -(void)cancelViewControllerTask:(NSString*)VCId;
 @end
