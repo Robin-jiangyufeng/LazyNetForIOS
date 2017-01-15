@@ -156,13 +156,21 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
 }
 
 -(LazyBURLSessionTask *)requestWithParam:(RequestParam*)param
-                            httpMedth:(HttpRequestModel)httpMethod
-                      responseProcess:(ResponseProcess*)responseProcess
-                      loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
-                     callbackdelegate:(id<ResponseCallbackDelegate>)delegate
-                            loadCache:(RequestLoadCacheBlock)loadCache
-                              success:(RequestSuccessBlock)success
-                                 fail:(RequestFailBlock)fail {
+                               httpMedth:(HttpRequestModel)httpMethod
+                         responseProcess:(ResponseProcess*)responseProcess
+                         loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
+                        callbackdelegate:(id<ResponseCallbackDelegate>)delegate
+                               loadCache:(RequestLoadCacheBlock)loadCache
+                                 success:(RequestSuccessBlock)success
+                                    fail:(RequestFailBlock)fail {
+    if([self isExistOfTask:[param requestId]]){
+        LazyLog(@"\n");
+        LazyLog(@"\n有一个相同的请求已存在,请等待其成功后在继续操作,请求Id: %@\n请求URL: %@\n请求params:%@\n\n",
+                [param requestId],
+                [self absoluteURL:[param url]],
+                [JSONUtils dictionaryToJSONString:[param getBodys]]);
+        return nil;
+    }
     NSString *absoluteURL = [self absoluteURL:[param url]];
     if (absoluteURL == nil) {
         LazyLog(@"URLString无效，无法生成URL。可能是URL中有中文，请尝试Encode URL");
@@ -180,7 +188,7 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
         [_httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
     }];
     [self loadCache:param.cacheLoadType withRequestParam:param
-                               loadingDelegate:loadingDelegate withRequestLoadCacheBlock:loadCache withCallbackDelegate:delegate withResponseProcess:responseProcess];//处理缓存
+    loadingDelegate:loadingDelegate withRequestLoadCacheBlock:loadCache withCallbackDelegate:delegate withResponseProcess:responseProcess];//处理缓存
     LazyBURLSessionTask *session = nil;
     switch (httpMethod) {
         case RequestModel_GET:{
@@ -261,12 +269,21 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
                          progress:(RequestProgressBlock)progress
                           success:(RequestSuccessBlock)success
                              fail:(RequestFailBlock)fail {
+    if([self isExistOfTask:[param requestId]]){
+        LazyLog(@"\n");
+        LazyLog(@"\n有一个相同的请求已存在,请等待其成功后在继续操作,请求Id: %@\n请求URL: %@\n请求params:%@\n\n",
+                [param requestId],
+                [param url],
+                [JSONUtils dictionaryToJSONString:[param getBodys]]);
+        return nil;
+    }
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[param url]]];
     LazyBURLSessionTask *session = nil;
     [_httpSessionManager uploadTaskWithRequest:request fromFile:[NSURL URLWithString:uploadFile] progress:^(NSProgress * _Nonnull uploadProgress) {
         //上传进度
         [self requestProgress:param progress:uploadProgress callbackdelegate:delegate progressBlock:progress];
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        [self removeTaskWithRequestId:[param requestId]];
         if(error){
             if(fail){
                 fail([param requestId],error.code,error.localizedDescription);
@@ -318,6 +335,14 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
                            progress:(RequestProgressBlock)progressBlock
                             success:(RequestSuccessBlock)success
                                fail:(RequestFailBlock)fail {
+    if([self isExistOfTask:[param requestId]]){
+        LazyLog(@"\n");
+        LazyLog(@"\n有一个相同的请求已存在,请等待其成功后在继续操作,请求Id: %@\n请求URL: %@\n请求params:%@\n\n",
+                [param requestId],
+                [param url],
+                [JSONUtils dictionaryToJSONString:[param getBodys]]);
+        return nil;
+    }
     NSURLRequest *downloadRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[param url]]];
     LazyBURLSessionTask *session = nil;
     session = [_httpSessionManager downloadTaskWithRequest:downloadRequest progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -326,6 +351,7 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
         return [NSURL fileURLWithPath:saveToPath];
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        [self removeTaskWithRequestId:[param requestId]];
         if(error){
             if(fail){
                 fail([param requestId],error.code,error.localizedDescription);
@@ -367,16 +393,16 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
              response:(id)responseObject
       responseProcess:(ResponseProcess*)responseProcess
       loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
-           callbackdelegate:(id<ResponseCallbackDelegate>)delegate
-                    success:(RequestSuccessBlock)success{
+     callbackdelegate:(id<ResponseCallbackDelegate>)delegate
+              success:(RequestSuccessBlock)success{
     [self removeTaskWithRequestId:[param requestId]];
     [self saveCache:param.cacheLoadType withRequestParam:param withResponse:responseObject];
     LazyLog(@"\n");
     LazyLog(@"\n请求成功, 请求Id: %@\n请求URL: %@\n请求params:%@\n返回response:%@\n\n",
-              [param requestId],
-              [[[task currentRequest] URL]absoluteString],
-              [param getBodys],
-              [JSONUtils dictionaryToJSONString:responseObject]);
+            [param requestId],
+            [[[task currentRequest] URL]absoluteString],
+            [JSONUtils dictionaryToJSONString:[param getBodys]],
+            [JSONUtils dictionaryToJSONString:responseObject]);
     id response=[responseProcess process:responseObject];
     if(success){
         success([param requestId],response);
@@ -391,14 +417,14 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
 
 /**请求失败反馈的处理*/
 -(void)requestFail:(RequestParam*)param
-                 task:(NSURLSessionDataTask *) task
-                error:(NSError*)error
-      loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
-     callbackdelegate:(id<ResponseCallbackDelegate>)delegate
-                 fail:(RequestFailBlock)fail{
+              task:(NSURLSessionDataTask *) task
+             error:(NSError*)error
+   loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
+  callbackdelegate:(id<ResponseCallbackDelegate>)delegate
+              fail:(RequestFailBlock)fail{
     [self removeTaskWithRequestId:[param requestId]];
     LazyLog(@"\n");
-    LazyLog(@"\n请求失败, 请求Id: %@\n 请求URL: %@\n 请求params:%@\n 返回错误码:%@\n 返回错误信息: %@\n",
+    LazyLog(@"\n请求失败, 请求Id: %@\n请求URL: %@\n请求params:%@\n返回错误码:%@\n返回错误信息: %@\n",
             [param requestId],
             [[[task currentRequest] URL]absoluteString],
             [param getBodys],
@@ -424,9 +450,9 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
  * @param responseProcess response加工工具
  */
 -(void)loadCache:(HttpCacheLoadType)loadType
-          withRequestParam:(RequestParam *)requestParam
-            loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
-  withRequestLoadCacheBlock:(RequestLoadCacheBlock)cacheBlock                      withCallbackDelegate:(id<ResponseCallbackDelegate>)delegate withResponseProcess:(ResponseProcess *)responseProcess{
+withRequestParam:(RequestParam *)requestParam
+ loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
+withRequestLoadCacheBlock:(RequestLoadCacheBlock)cacheBlock                      withCallbackDelegate:(id<ResponseCallbackDelegate>)delegate withResponseProcess:(ResponseProcess *)responseProcess{
     NSString*key=[[requestParam getUniqueId] toMD5];
     id response=nil;
     switch (loadType) {
@@ -501,6 +527,13 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
  */
 -(NSString*)absoluteURL:(nonnull NSString*)url{
     return [[NSURL URLWithString:url relativeToURL:[NSURL URLWithString:_baseUrl]] absoluteString];
+}
+
+/***
+ 根据id判断任务是让已经存在
+ */
+-(BOOL)isExistOfTask:(NSString*)requestId{
+    return [[_tasks allKeys]containsObject:requestId];
 }
 
 /**

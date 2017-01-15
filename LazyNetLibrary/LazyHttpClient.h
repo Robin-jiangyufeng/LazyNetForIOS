@@ -81,15 +81,6 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate;
             fail:(RequestFailBlock)fail;
 
 /**
- * 把一个添加成功的请求添加到对应的UIViewController队列中
- *
- * @param VCId view控制器唯一id
- * @param requestId      报文id
- */
--(void)addViewControllerTask:(NSString*)VCId
-               withRequestId:(NSString*)requestId;
-
-/**
  * 取消与对应ViewController相关的所有请求
  *
  * @param VCId
