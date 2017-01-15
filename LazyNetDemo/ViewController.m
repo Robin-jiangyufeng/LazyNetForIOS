@@ -27,7 +27,7 @@
 
 -(void)loadLayout{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"登录/注册" forState:UIControlStateNormal];
+    [button setTitle:@"GET请求" forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont systemFontOfSize:16]];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage dp_imageWithColor:UIColorFromRGB(0xec4c4d)] forState:UIControlStateNormal];
