@@ -35,6 +35,20 @@
 		4E65FBDE1E28E3110021D77D /* ResponseCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E65FBCD1E28E3110021D77D /* ResponseCallback.h */; };
 		4E65FBDF1E28E3110021D77D /* ResponseProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E65FBCE1E28E3110021D77D /* ResponseProcess.h */; };
 		4E65FBE01E28E3110021D77D /* ResponseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E65FBCF1E28E3110021D77D /* ResponseProcess.m */; };
+		4EA576B11E2B36BA00AA761B /* UIColor+WJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576B01E2B36BA00AA761B /* UIColor+WJExtend.m */; };
+		4EA576B41E2B36F900AA761B /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576B31E2B36F900AA761B /* UIImage+Addition.m */; };
+		4EA576D61E2B3D3200AA761B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4EA576BA1E2B3D3200AA761B /* LICENSE */; };
+		4EA576D71E2B3D3200AA761B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576BD1E2B3D3200AA761B /* MASCompositeConstraint.m */; };
+		4EA576D81E2B3D3200AA761B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576C01E2B3D3200AA761B /* MASConstraint.m */; };
+		4EA576D91E2B3D3200AA761B /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576C21E2B3D3200AA761B /* MASConstraintMaker.m */; };
+		4EA576DA1E2B3D3200AA761B /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576C41E2B3D3200AA761B /* MASLayoutConstraint.m */; };
+		4EA576DB1E2B3D3200AA761B /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576C81E2B3D3200AA761B /* MASViewAttribute.m */; };
+		4EA576DC1E2B3D3200AA761B /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576CA1E2B3D3200AA761B /* MASViewConstraint.m */; };
+		4EA576DD1E2B3D3200AA761B /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576CC1E2B3D3200AA761B /* NSArray+MASAdditions.m */; };
+		4EA576DE1E2B3D3200AA761B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576CF1E2B3D3200AA761B /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		4EA576DF1E2B3D3200AA761B /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576D11E2B3D3200AA761B /* View+MASAdditions.m */; };
+		4EA576E01E2B3D3200AA761B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576D41E2B3D3200AA761B /* ViewController+MASAdditions.m */; };
+		4EA576E11E2B3D3200AA761B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4EA576D51E2B3D3200AA761B /* README.md */; };
 		64A5669DBADAB11ACE1DEB87 /* libPods-LazyNetLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4CE87FBE6AA77819B17160 /* libPods-LazyNetLibrary.a */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +143,40 @@
 		4E65FBCD1E28E3110021D77D /* ResponseCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseCallback.h; sourceTree = "<group>"; };
 		4E65FBCE1E28E3110021D77D /* ResponseProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseProcess.h; sourceTree = "<group>"; };
 		4E65FBCF1E28E3110021D77D /* ResponseProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseProcess.m; sourceTree = "<group>"; };
+		4EA576AF1E2B36BA00AA761B /* UIColor+WJExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+WJExtend.h"; sourceTree = "<group>"; };
+		4EA576B01E2B36BA00AA761B /* UIColor+WJExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WJExtend.m"; sourceTree = "<group>"; };
+		4EA576B21E2B36F900AA761B /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addition.h"; sourceTree = "<group>"; };
+		4EA576B31E2B36F900AA761B /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addition.m"; sourceTree = "<group>"; };
+		4EA576B61E2B3A2000AA761B /* LazyNetDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyNetDemo.pch; sourceTree = "<group>"; };
+		4EA576B71E2B3C2600AA761B /* libMasonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMasonry.a; path = "../../../../../Users/jiangyufeng/Library/Developer/Xcode/DerivedData/LazyNetForIOS-esogugdqwpgoniewssuzouqmwxns/Build/Products/Debug-iphonesimulator/Masonry/libMasonry.a"; sourceTree = "<group>"; };
+		4EA576BA1E2B3D3200AA761B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4EA576BC1E2B3D3200AA761B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		4EA576BD1E2B3D3200AA761B /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		4EA576BE1E2B3D3200AA761B /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		4EA576BF1E2B3D3200AA761B /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		4EA576C01E2B3D3200AA761B /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		4EA576C11E2B3D3200AA761B /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		4EA576C21E2B3D3200AA761B /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		4EA576C31E2B3D3200AA761B /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		4EA576C41E2B3D3200AA761B /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		4EA576C51E2B3D3200AA761B /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		4EA576C61E2B3D3200AA761B /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		4EA576C71E2B3D3200AA761B /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		4EA576C81E2B3D3200AA761B /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		4EA576C91E2B3D3200AA761B /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		4EA576CA1E2B3D3200AA761B /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		4EA576CB1E2B3D3200AA761B /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		4EA576CC1E2B3D3200AA761B /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		4EA576CD1E2B3D3200AA761B /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		4EA576CE1E2B3D3200AA761B /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		4EA576CF1E2B3D3200AA761B /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		4EA576D01E2B3D3200AA761B /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		4EA576D11E2B3D3200AA761B /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		4EA576D21E2B3D3200AA761B /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		4EA576D31E2B3D3200AA761B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		4EA576D41E2B3D3200AA761B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		4EA576D51E2B3D3200AA761B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4EA576E21E2B3EC100AA761B /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		6EB4205224A27442A910A905 /* Pods-LazyNetLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyNetLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyNetLibrary/Pods-LazyNetLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		CA4CE87FBE6AA77819B17160 /* libPods-LazyNetLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LazyNetLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -213,6 +261,12 @@
 		4E65FB6A1E28E20D0021D77D /* LazyNetDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4EA576E21E2B3EC100AA761B /* Define.h */,
+				4EA576B91E2B3D3200AA761B /* Masonry */,
+				4EA576B21E2B36F900AA761B /* UIImage+Addition.h */,
+				4EA576B31E2B36F900AA761B /* UIImage+Addition.m */,
+				4EA576AF1E2B36BA00AA761B /* UIColor+WJExtend.h */,
+				4EA576B01E2B36BA00AA761B /* UIColor+WJExtend.m */,
 				4E65FB6E1E28E20D0021D77D /* AppDelegate.h */,
 				4E65FB6F1E28E20D0021D77D /* AppDelegate.m */,
 				4E65FB711E28E20D0021D77D /* ViewController.h */,
@@ -222,6 +276,7 @@
 				4E65FB791E28E20D0021D77D /* LaunchScreen.storyboard */,
 				4E65FB7C1E28E20D0021D77D /* Info.plist */,
 				4E65FB6B1E28E20D0021D77D /* Supporting Files */,
+				4EA576B61E2B3A2000AA761B /* LazyNetDemo.pch */,
 			);
 			path = LazyNetDemo;
 			sourceTree = "<group>";
@@ -285,9 +340,52 @@
 			path = LazyNetLibraryTests;
 			sourceTree = "<group>";
 		};
+		4EA576B91E2B3D3200AA761B /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				4EA576BA1E2B3D3200AA761B /* LICENSE */,
+				4EA576BB1E2B3D3200AA761B /* Masonry */,
+				4EA576D51E2B3D3200AA761B /* README.md */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		4EA576BB1E2B3D3200AA761B /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				4EA576BC1E2B3D3200AA761B /* MASCompositeConstraint.h */,
+				4EA576BD1E2B3D3200AA761B /* MASCompositeConstraint.m */,
+				4EA576BE1E2B3D3200AA761B /* MASConstraint+Private.h */,
+				4EA576BF1E2B3D3200AA761B /* MASConstraint.h */,
+				4EA576C01E2B3D3200AA761B /* MASConstraint.m */,
+				4EA576C11E2B3D3200AA761B /* MASConstraintMaker.h */,
+				4EA576C21E2B3D3200AA761B /* MASConstraintMaker.m */,
+				4EA576C31E2B3D3200AA761B /* MASLayoutConstraint.h */,
+				4EA576C41E2B3D3200AA761B /* MASLayoutConstraint.m */,
+				4EA576C51E2B3D3200AA761B /* Masonry.h */,
+				4EA576C61E2B3D3200AA761B /* MASUtilities.h */,
+				4EA576C71E2B3D3200AA761B /* MASViewAttribute.h */,
+				4EA576C81E2B3D3200AA761B /* MASViewAttribute.m */,
+				4EA576C91E2B3D3200AA761B /* MASViewConstraint.h */,
+				4EA576CA1E2B3D3200AA761B /* MASViewConstraint.m */,
+				4EA576CB1E2B3D3200AA761B /* NSArray+MASAdditions.h */,
+				4EA576CC1E2B3D3200AA761B /* NSArray+MASAdditions.m */,
+				4EA576CD1E2B3D3200AA761B /* NSArray+MASShorthandAdditions.h */,
+				4EA576CE1E2B3D3200AA761B /* NSLayoutConstraint+MASDebugAdditions.h */,
+				4EA576CF1E2B3D3200AA761B /* NSLayoutConstraint+MASDebugAdditions.m */,
+				4EA576D01E2B3D3200AA761B /* View+MASAdditions.h */,
+				4EA576D11E2B3D3200AA761B /* View+MASAdditions.m */,
+				4EA576D21E2B3D3200AA761B /* View+MASShorthandAdditions.h */,
+				4EA576D31E2B3D3200AA761B /* ViewController+MASAdditions.h */,
+				4EA576D41E2B3D3200AA761B /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
 		943B66B36395AC427D16035E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4EA576B71E2B3C2600AA761B /* libMasonry.a */,
 				CA4CE87FBE6AA77819B17160 /* libPods-LazyNetLibrary.a */,
 			);
 			name = Frameworks;
@@ -472,6 +570,7 @@
 			files = (
 				4E65FB7B1E28E20D0021D77D /* LaunchScreen.storyboard in Resources */,
 				4E65FB781E28E20D0021D77D /* Assets.xcassets in Resources */,
+				4EA576D61E2B3D3200AA761B /* LICENSE in Resources */,
 				4E65FB761E28E20D0021D77D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,7 +633,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -544,8 +643,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA576DE1E2B3D3200AA761B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				4E65FB731E28E20D0021D77D /* ViewController.m in Sources */,
+				4EA576DC1E2B3D3200AA761B /* MASViewConstraint.m in Sources */,
 				4E65FB701E28E20D0021D77D /* AppDelegate.m in Sources */,
+				4EA576B11E2B36BA00AA761B /* UIColor+WJExtend.m in Sources */,
+				4EA576B41E2B36F900AA761B /* UIImage+Addition.m in Sources */,
+				4EA576E11E2B3D3200AA761B /* README.md in Sources */,
+				4EA576DF1E2B3D3200AA761B /* View+MASAdditions.m in Sources */,
+				4EA576D71E2B3D3200AA761B /* MASCompositeConstraint.m in Sources */,
+				4EA576DB1E2B3D3200AA761B /* MASViewAttribute.m in Sources */,
+				4EA576D91E2B3D3200AA761B /* MASConstraintMaker.m in Sources */,
+				4EA576DD1E2B3D3200AA761B /* NSArray+MASAdditions.m in Sources */,
+				4EA576E01E2B3D3200AA761B /* ViewController+MASAdditions.m in Sources */,
+				4EA576D81E2B3D3200AA761B /* MASConstraint.m in Sources */,
+				4EA576DA1E2B3D3200AA761B /* MASLayoutConstraint.m in Sources */,
 				4E65FB6D1E28E20D0021D77D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,6 +842,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LazyNetDemo/LazyNetDemo.pch";
 				INFOPLIST_FILE = LazyNetDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetDemo;
@@ -741,6 +854,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LazyNetDemo/LazyNetDemo.pch";
 				INFOPLIST_FILE = LazyNetDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetDemo;

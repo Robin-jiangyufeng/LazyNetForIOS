@@ -1,0 +1,19 @@
+//
+//  LazyNetDemo.pch
+//  LazyNetForIOS
+//
+//  Created by 江钰锋 on 2017/1/15.
+//  Copyright © 2017年 jiangyufeng. All rights reserved.
+//
+
+#ifndef LazyNetDemo_pch
+#define LazyNetDemo_pch
+#ifdef __OBJC__
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIColor+WJExtend.h"
+#import "UIImage+Addition.h"
+#import "Masonry.h"
+#import "Define.h"
+#endif
+#endif /* LazyNetDemo_pch */
