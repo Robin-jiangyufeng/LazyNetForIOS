@@ -40,12 +40,14 @@
          success:(RequestSuccessBlock)success
             fail:(RequestFailBlock)fail
 {
-    [self doGet:param
+    LazyBURLSessionTask*task=[self doGet:param
  responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate
        loadCache:loadCache
          success:success
             fail:fail];
-    [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    if(task){
+       [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    }
 }
 
 -(void)GET_JSON:(NSString*)VCId
@@ -54,9 +56,11 @@
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
 callbackdelegate:(id<ResponseCallbackDelegate>)delegate
 {
-    [self doGet:param
+    LazyBURLSessionTask*task=[self doGet:param
  responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate callbackdelegate:delegate];
-    [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    if(task){
+        [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    }
 }
 
 -(void)POST_JSON:(NSString*)VCId
@@ -65,9 +69,11 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
 callbackdelegate:(id<ResponseCallbackDelegate>)delegate
 {
-    [self doPost:param
+    LazyBURLSessionTask*task=[self doPost:param
  responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate callbackdelegate:delegate];
-    [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    if(task){
+        [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    }
 }
 
 -(void)POST_JSON:(NSString*)VCId
@@ -78,12 +84,14 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
          success:(RequestSuccessBlock)success
             fail:(RequestFailBlock)fail
 {
-    [self doPost:param
+    LazyBURLSessionTask*task=[self doPost:param
  responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate
        loadCache:loadCache
          success:success
             fail:fail];
-    [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    if(task){
+        [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    }
 }
 
 /**
@@ -91,8 +99,6 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
  *
  * @param VCId view控制器唯一id
  * @param requestId      报文id
- * @throws
- * @see [类、类#方法、类#成员]
  */
 -(void)addViewControllerTask:(NSString*)VCId
                withRequestId:(NSString*)requestId {
