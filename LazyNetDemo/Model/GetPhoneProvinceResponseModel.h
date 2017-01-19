@@ -9,5 +9,5 @@
 #import "BaseResponseModel.h"
 #import "PhoneProvinceModel.h"
 @interface GetPhoneProvinceResponseModel : BaseResponseModel
-@property (copy, nonatomic) PhoneProvinceModel *result;
+@property (nonatomic,strong) PhoneProvinceModel *result;
 @end
