@@ -39,5 +39,8 @@ NSString* const url=@"http://apis.juhe.cn";
     }];
 }
 
+-(void)close{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

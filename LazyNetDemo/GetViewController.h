@@ -13,5 +13,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneText;
 @property (weak, nonatomic) IBOutlet UILabel *lable;
 - (IBAction)buttonPress:(id)sender;
-
+- (IBAction)close;
 @end
