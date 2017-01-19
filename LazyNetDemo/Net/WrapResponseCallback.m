@@ -58,7 +58,7 @@
         if (response) {
             if ([response isKindOfClass:[BaseResponseModel class]]) {
                 BaseResponseModel* model = (BaseResponseModel*)response;
-                if ([model.resultcode isEqualToString:@"200"]) {
+                if ((model.resultcode&&[model.resultcode isEqualToString:@"200"])||[model.error_code isEqualToString:@"0"]) {
                     if (![model isEmpty]) {//如果数据不是空的
                         if(_callbackDelegate){
                             [_callbackDelegate onLoadCache:requestId withResponse:response];
@@ -74,7 +74,7 @@
         if (response) {
             if ([response isKindOfClass: [BaseResponseModel class]]) {
                 BaseResponseModel*model = (BaseResponseModel*)response;
-                if ([model.resultcode isEqualToString:@"200" ]) {
+                if ((model.resultcode&&[model.resultcode isEqualToString:@"200"])||[model.error_code isEqualToString:@"0"]) {
                     if ([model isEmpty ]) {//如果数据是空的
                         if(_callbackDelegate){
                           [_callbackDelegate onFail:requestId withCode:ERROR_EMPTY_DATA withMessage:@"后台返回的数据为空"];

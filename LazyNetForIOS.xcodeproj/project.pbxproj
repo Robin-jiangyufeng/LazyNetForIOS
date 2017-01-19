@@ -45,6 +45,10 @@
 		4E288ECD1E306BD300C3DC38 /* LazyHttpClient+WJCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EC51E306BD300C3DC38 /* LazyHttpClient+WJCustom.m */; };
 		4E288ECE1E306BD300C3DC38 /* WJHttpErrorCodeParseHelps.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EC71E306BD300C3DC38 /* WJHttpErrorCodeParseHelps.m */; };
 		4E288ECF1E306BD300C3DC38 /* WrapResponseCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EC91E306BD300C3DC38 /* WrapResponseCallback.m */; };
+		4E288ED21E309BAC00C3DC38 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288ED11E309BAC00C3DC38 /* PostViewController.m */; };
+		4E288ED81E309DDB00C3DC38 /* QQXiongJIResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288ED71E309DDB00C3DC38 /* QQXiongJIResponseModel.m */; };
+		4E288EDB1E309DF400C3DC38 /* QQXiongJIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EDA1E309DF400C3DC38 /* QQXiongJIModel.m */; };
+		4E288EDE1E309E5800C3DC38 /* QQXiongJIDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EDD1E309E5800C3DC38 /* QQXiongJIDataModel.m */; };
 		C7735CD5330F73EF0FC2952D /* libPods-LazyNetDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4DABDF4C830993900E5CC4 /* libPods-LazyNetDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +164,14 @@
 		4E288EC71E306BD300C3DC38 /* WJHttpErrorCodeParseHelps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJHttpErrorCodeParseHelps.m; sourceTree = "<group>"; };
 		4E288EC81E306BD300C3DC38 /* WrapResponseCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapResponseCallback.h; sourceTree = "<group>"; };
 		4E288EC91E306BD300C3DC38 /* WrapResponseCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrapResponseCallback.m; sourceTree = "<group>"; };
+		4E288ED01E309BAC00C3DC38 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		4E288ED11E309BAC00C3DC38 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		4E288ED61E309DDB00C3DC38 /* QQXiongJIResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQXiongJIResponseModel.h; sourceTree = "<group>"; };
+		4E288ED71E309DDB00C3DC38 /* QQXiongJIResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQXiongJIResponseModel.m; sourceTree = "<group>"; };
+		4E288ED91E309DF400C3DC38 /* QQXiongJIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQXiongJIModel.h; sourceTree = "<group>"; };
+		4E288EDA1E309DF400C3DC38 /* QQXiongJIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQXiongJIModel.m; sourceTree = "<group>"; };
+		4E288EDC1E309E5800C3DC38 /* QQXiongJIDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQXiongJIDataModel.h; sourceTree = "<group>"; };
+		4E288EDD1E309E5800C3DC38 /* QQXiongJIDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQXiongJIDataModel.m; sourceTree = "<group>"; };
 		63676CDB30B3618694392CB2 /* Pods-LazyNetLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyNetLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyNetLibrary/Pods-LazyNetLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		6B4DABDF4C830993900E5CC4 /* libPods-LazyNetDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LazyNetDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		853B5A7515500F7C7D4CC7CF /* Pods-LazyNetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyNetDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyNetDemo/Pods-LazyNetDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +266,8 @@
 				4E288EBC1E306BD300C3DC38 /* Model */,
 				4E288EC31E306BD300C3DC38 /* Net */,
 				4E288EB11E306BC900C3DC38 /* Define.h */,
+				4E288ED01E309BAC00C3DC38 /* PostViewController.h */,
+				4E288ED11E309BAC00C3DC38 /* PostViewController.m */,
 				4E288EB21E306BC900C3DC38 /* GetViewController.h */,
 				4E288EB31E306BC900C3DC38 /* GetViewController.m */,
 				4E288EB41E306BC900C3DC38 /* LazyNetDemo.pch */,
@@ -342,6 +356,12 @@
 				4E288EC01E306BD300C3DC38 /* GetPhoneProvinceResponseModel.m */,
 				4E288EC11E306BD300C3DC38 /* PhoneProvinceModel.h */,
 				4E288EC21E306BD300C3DC38 /* PhoneProvinceModel.m */,
+				4E288ED61E309DDB00C3DC38 /* QQXiongJIResponseModel.h */,
+				4E288ED71E309DDB00C3DC38 /* QQXiongJIResponseModel.m */,
+				4E288ED91E309DF400C3DC38 /* QQXiongJIModel.h */,
+				4E288EDA1E309DF400C3DC38 /* QQXiongJIModel.m */,
+				4E288EDC1E309E5800C3DC38 /* QQXiongJIDataModel.h */,
+				4E288EDD1E309E5800C3DC38 /* QQXiongJIDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -673,12 +693,16 @@
 			files = (
 				4E288ECD1E306BD300C3DC38 /* LazyHttpClient+WJCustom.m in Sources */,
 				4E288ECC1E306BD300C3DC38 /* PhoneProvinceModel.m in Sources */,
+				4E288EDB1E309DF400C3DC38 /* QQXiongJIModel.m in Sources */,
+				4E288ED21E309BAC00C3DC38 /* PostViewController.m in Sources */,
+				4E288EDE1E309E5800C3DC38 /* QQXiongJIDataModel.m in Sources */,
 				4E288E471E306A2500C3DC38 /* ViewController.m in Sources */,
 				4E288ECF1E306BD300C3DC38 /* WrapResponseCallback.m in Sources */,
 				4E288ECA1E306BD300C3DC38 /* BaseResponseModel.m in Sources */,
 				4E288ECB1E306BD300C3DC38 /* GetPhoneProvinceResponseModel.m in Sources */,
 				4E288EB91E306BC900C3DC38 /* GetViewController.m in Sources */,
 				4E288E441E306A2500C3DC38 /* AppDelegate.m in Sources */,
+				4E288ED81E309DDB00C3DC38 /* QQXiongJIResponseModel.m in Sources */,
 				4E288E411E306A2500C3DC38 /* main.m in Sources */,
 				4E288ECE1E306BD300C3DC38 /* WJHttpErrorCodeParseHelps.m in Sources */,
 				4E288EBA1E306BC900C3DC38 /* UIColor+WJExtend.m in Sources */,
