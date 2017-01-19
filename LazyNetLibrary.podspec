@@ -38,8 +38,8 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  # s.license      = "MIT"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => 'MIT' }
+  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
-  s.ios.deployment_target = "7.0"
+  # s.ios.deployment_target = "7.0"
   # s.osx.deployment_target = "10.8"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -94,7 +94,7 @@ Pod::Spec.new do |s|
   s.source_files = 'LazyNetLibrary/*.{h,m}'
   # s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "LazyNetForIOS/**/*.h"
+  # s.public_header_files = "LazyNetForIOS/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -118,8 +118,11 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  s.frameworks = "AFNetworking", "MJExtension","TMCache"
-
+  s.frameworks = "AVFoundation","Foundation"
+  s.dependency 'AFNetworking', '~> 3.0'
+  s.dependency 'TMCache'
+  s.dependency 'MJExtension'
+  # spec.vendored_frameworks = 'YYBaseLib.framework'
   # s.library   = "iconv"
   # s.libraries = "AFNetworking", "MJExtension","TMCache"
 
