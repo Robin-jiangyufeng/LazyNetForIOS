@@ -20,9 +20,12 @@
   * 5.支持block方式和delegate方式的数据回调,当一个页面中有多个请求的情况,强烈建议使用delegate方式,然后根据requestId(请求id)取区分是哪一个请求,并且做对应的处理,增加代码的复用性
   * 6.支持返回数据的加工处理,只需要自定义一个[ResponseProcess](https://github.com/Robin-jiangyufeng/LazyNetForIOS/blob/master/LazyNetLibrary/ResponseProcess.m)的子类,并重写process方法替换默认加工器即可
   * 7.支持自定义请求参数,不管是什么类型,只需要自定义一个[RequestParam](https://github.com/Robin-jiangyufeng/LazyNetForIOS/blob/master/LazyNetLibrary/RequestParam.m)的子类,并重写bodys方法即可
-  * 8.日志输出请求信息清晰明了
+  * 8.支持加载框,并且自定义加载框
+  * 9.支持取消对应requestId的请求,以及取消所有请求
+  * 10.支持取消当前ViewController中的所有请求,请求与ViewController联动
+  * 11.日志输出请求信息清晰明了
 
-#   使用方法
+#   使用方法(以下使用方法只举了几个例,更多使用方法请自己查看代码,或者联系我)
 ### 库引入方式
    * 由于种种原因这个库暂时还没有提交到Cocoapods,如果需要使用请自行导出framework或者把LazyNetLibrary代码直接考到自己项目中
 
@@ -41,8 +44,8 @@
   [httpClient updateBaseUrl:url];
 ```
 
-### get方式请求
-   * 以下是block回调方式,delegate方式请自行看例子;例子的回调是重新包装过的,为了使用更加简单
+### get方式请求(以下是block回调方式,delegate方式请自行看例子;例子的回调是重新包装过的,为了使用更加简单)
+   * 不带缓存功能请求
 ````
     RequestParam* param=[[RequestParam alloc]initWithUrl:@"/mobile/get"];
     [param addBody:self.phoneText.text withKey:@"phone"];
@@ -55,8 +58,27 @@
     }];
 ````
 
-### post方式请求
-   * 以下是block回调方式,delegate方式请自行看例子;例子是经过包装了的
+    * 带缓存功能请求(缓存类型有四种,代码中自行查看)
+````
+    RequestParam* param=[[RequestParam alloc]initWithUrl:@"/mobile/get"];
+    [param addBody:self.phoneText.text withKey:@"phone"];
+    [param addBody:@"158e0590ea4e597836384817ee4108f3" withKey:@"key"];
+    param.cacheLoadType=USE_CACHE_UPDATE_CACHE;
+    [[LazyHttpClient getInstance]GET_JSON:self param:param responseClazz:[GetPhoneProvinceResponseModel class] loadingDelegate:nil 
+    loadCache:^(NSString *requestId, id response) {
+        GetPhoneProvinceResponseModel*model=response;
+        self.lable.text=[JSONUtils objectToJSONString:model];
+    } success:^(NSString *requestId, id response) {
+        GetPhoneProvinceResponseModel*model=response;
+        self.lable.text=[JSONUtils objectToJSONString:model];
+    } fail:^(NSString *requestId, NSInteger *errorCode, NSString *errorMsaaege) {
+        self.lable.text=[NSString stringWithFormat:@"获取手机号归属地错误,错误原因:%@",errorMsaaege];
+    }];
+````
+
+
+### post方式请求(以下是block回调方式,delegate方式请自行看例子;例子是经过包装了的)
+   * 不带缓存功能的
 ````
      NSString*theUrl=@"/qqevaluate/qq";
      RequestParam* param=[[RequestParam alloc]initWithUrl:theUrl];
@@ -69,6 +91,24 @@
            self.lable.text=[NSString stringWithFormat:@"调用QQ测凶吉接口错误,错误原因:%@",errorMsaaege];
       }];
 ````
+    * 带缓存功能的(缓存类型有四种,代码中自行查看)
+````
+    NSString*theUrl=@"/qqevaluate/qq";
+    RequestParam* param=[[RequestParam alloc]initWithUrl:theUrl];
+    [param addBody:self.phoneText.text withKey:@"qq"];
+    [param addBody:@"780e8bced58c6203140b858d7aa2644c" withKey:@"key"];
+    param.cacheLoadType=USE_CACHE_UPDATE_CACHE;
+    [[LazyHttpClient getInstance]POST_JSON:self param:param responseClazz:[QQXiongJIResponseModel class] loadingDelegate:nil loadCache:^(NSString *requestId, id response) {
+        QQXiongJIResponseModel*model=response;
+        self.lable.text=[JSONUtils objectToJSONString:model];
+    } success:^(NSString *requestId, id response) {
+        QQXiongJIResponseModel*model=response;
+        self.lable.text=[JSONUtils objectToJSONString:model];
+    } fail:^(NSString *requestId, NSInteger *errorCode, NSString *errorMsaaege) {
+        self.lable.text=[NSString stringWithFormat:@"调用QQ测凶吉接口错误,错误原因:%@",errorMsaaege];
+    }];
+````
+
 ### 上传
    * 待续...
    
