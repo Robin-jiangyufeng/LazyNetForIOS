@@ -11,6 +11,7 @@
   * 如果觉得框架写的还不错,或者对自己有用的话,请给个star吧,感谢您的支持,谢谢
   * 如果框架中有什么写的不足的地方,请告诉我,非常感谢
   * 如果对与使用方法不懂的地方你也可以联系我,乐于为你解答(联系方式你看末尾)
+  
 ### 功能:
   * 1.支持json,NSString,NSData,以及自定义的请求,自定义请求可以自行扩展,只需要自定义一个[AFHTTPRequestSerializer](https://github.com/Robin-jiangyufeng/LazyNetForIOS/blob/master/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m)和[AFHTTPResponseSerializer](https://github.com/Robin-jiangyufeng/LazyNetForIOS/blob/master/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m)子类,并重写对应方法即可
   * 2.目前支持GET和POST方式请求(一般开发场景中已足够用),以及文件上传和下载功能
