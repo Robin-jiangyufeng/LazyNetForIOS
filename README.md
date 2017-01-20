@@ -19,85 +19,63 @@
   * 4.支持缓存,虽然Cocoa网络请求就支持缓存功能,但实际很多时候都不能满足我们的需求,比如先获取缓存数据再获取网络数据,后续将增加缓存期限
   * 5.支持block方式和delegate方式的数据回调,当一个页面中有多个请求的情况,强烈建议使用delegate方式,然后根据requestId(请求id)取区分是哪一个请求,并且做对应的处理,增加代码的复用性
   * 6.支持返回数据的加工处理,只需要自定义一个[ResponseProcess](https://github.com/Robin-jiangyufeng/LazyNetForIOS/blob/master/LazyNetLibrary/ResponseProcess.m)的子类,并重写process方法替换默认加工器即可
-  * 8.支持自定义请求参数,不管是什么类型,只需要自定义一个[RequestParam](https://github.com/Robin-jiangyufeng/LazyNetForIOS/blob/master/LazyNetLibrary/RequestParam.m)的子类,并重写bodys方法即可
-  * 9.日志输出请求信息清晰明了
-   
-### 使用场景:
-  * 1.替换SharePreference当做配置文件
-  * 2.缓存网络数据,比如json,图片数据等
-  * 3.自己想...
+  * 7.支持自定义请求参数,不管是什么类型,只需要自定义一个[RequestParam](https://github.com/Robin-jiangyufeng/LazyNetForIOS/blob/master/LazyNetLibrary/RequestParam.m)的子类,并重写bodys方法即可
+  * 8.日志输出请求信息清晰明了
 
 #   使用方法
 ### 库引入方式
-   * Gradle: 
-     ````compile 'com.robin.lazy.cache:CacheLibrary:1.0.6'````
-   * Maven:
-     ````
-       <dependency>
-          <groupId>com.robin.lazy.cache</groupId>
-          <artifactId>CacheLibrary</artifactId>
-          <version>1.0.6</version>
-          <type>pom</type>
-        </dependency>
-      ````
+   * 由于种种原因这个库暂时还没有提交到Cocoapods,如果需要使用请自行导出framework或者把LazyNetLibrary代码直接考到自己项目中
+
   
 ### 所需权限
-```java
-   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-   <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-```
+  * 联网权限
 
-### 初始化
-   * 想要直接使用CacheLoaderManager进行数据储存的话,请先进行初始化,初始化方式如下:
-```java
-  /***
-	 * 初始化缓存的一些配置
-	 * 
-	 * @param diskCacheFileNameGenerator
-	 * @param diskCacheSize 磁盘缓存大小
-	 * @param diskCacheFileCount 磁盘缓存文件的最大限度
-	 * @param maxMemorySize 内存缓存的大小
-	 * @return CacheLoaderConfiguration
-	 * @throws
-	 * @see [类、类#方法、类#成员]
-	 */
-CacheLoaderManager.getInstance().init(Context context,FileNameGenerator diskCacheFileNameGenerator, long diskCacheSize,
-                                      			int diskCacheFileCount, int maxMemorySize);
+### 更新baseUrl
+   * 如果你的项目中请求地址前缀是统一的,请使用以下方法来设置基础url;如果不统一就不用设置了
+```objective c
+  [[LazyHttpClient getInstance] updateBaseUrl:url];
+  或者
+  HttpClient *httpClient=[[HttpClient alloc]initWithBaseUrl:url];
+  或者
+  HttpClient *httpClient=[[HttpClient alloc]init];
+  [httpClient updateBaseUrl:url];
 ```
-### 缓存数据
-   * 以下代码只列举了储存String类型的数据,其它数据类型储存类似,具体请阅读 CacheLoaderManager.java
-```java
-   /**
-	 * save String到缓存
-	 * @param key 
-	 * @param value 要缓存的值
-	 * @param maxLimitTime 缓存期限(单位分钟)
-	 * @return 是否保存成功
-	 * boolean
-	 * @throws
-	 * @see [类、类#方法、类#成员]
-	 */
-CacheLoaderManager.getInstance().saveString(String key,String value,long maxLimitTime);
+### get方式请求
+   * 以下是block回调方式,delegate方式请自行看例子;例子的回调是重新包装过的,为了使用更加简单
+```objective c
+    RequestParam* param=[[RequestParam alloc]initWithUrl:@"/mobile/get"];
+    [param addBody:self.phoneText.text withKey:@"phone"];
+    [param addBody:@"158e0590ea4e597836384817ee4108f3" withKey:@"key"];
+    [[LazyHttpClient getInstance]GET_JSON:self param:param responseClazz:[GetPhoneProvinceResponseModel class] loadingDelegate:nil loadCache:nil success:^(NSString *requestId, id response) {
+        GetPhoneProvinceResponseModel*model=response;
+        self.lable.text=[JSONUtils objectToJSONString:model];
+    } fail:^(NSString *requestId, NSInteger *errorCode, NSString *errorMsaaege) {
+        self.lable.text=[NSString stringWithFormat:@"获取手机号归属地错误,错误原因:%@",errorMsaaege];
+    }];
 ```
-### 加载缓存数据
-   * 以下代码只列举了加载String类型的数据方法,其它数据加载类似,具体请阅读 CacheLoaderManager.java
-```java
-   /**
-     * 加载String
-     * @param key
-     * @return 等到缓存数据
-     * String
-     * @throws
-     * @see [类、类#方法、类#成员]
-     */
-CacheLoaderManager.getInstance().loadString(String key);
+### post方式请求
+   * * 以下是block回调方式,delegate方式请自行看例子;例子是经过包装了的
+```objective c
+     NSString*theUrl=@"/qqevaluate/qq";
+     RequestParam* param=[[RequestParam alloc]initWithUrl:theUrl];
+     [param addBody:self.phoneText.text withKey:@"qq"];
+     [param addBody:@"780e8bced58c6203140b858d7aa2644c" withKey:@"key"];
+     [[LazyHttpClient getInstance]POST_JSON:self param:param responseClazz:[QQXiongJIResponseModel class] loadingDelegate:nil loadCache:nil success:^(NSString *requestId, id response) {
+           QQXiongJIResponseModel*model=response;
+           self.lable.text=[JSONUtils objectToJSONString:model];
+      } fail:^(NSString *requestId, NSInteger *errorCode, NSString *errorMsaaege) {
+           self.lable.text=[NSString stringWithFormat:@"调用QQ测凶吉接口错误,错误原因:%@",errorMsaaege];
+      }];
 ```
-### 其它
-   * 上面介绍的是很小的一部分已经实现的功能,其中有还有很多功能可以高度定制,扩展性很强,更多功能待你发现;
+### 上传
+   * 待续...
+   
+### 下载
+   * 待续...
    
 # 关于作者Robin
 * 屌丝程序员
+* 如果对你有帮助,请给个star,谢谢支持
 * GitHub: [Robin-jiangyufeng](https://github.com/Robin-jiangyufeng)
 * QQ:429257411
 * 交流QQ群 236395044
