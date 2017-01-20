@@ -1,6 +1,6 @@
         LazyNetForIOS
 ---------------------
-# 由于本人不太会写文章,有写得不好得地方请见谅.
+# 由于本人不太会写文章,有写得不好得地方请见谅,之前也是一直都是写的android的,这是第一次写ios的
 #  项目介绍
 ### 项目地址
   * [LazyNetForIOS](https://github.com/Robin-jiangyufeng/LazyNetForIOS)
@@ -32,7 +32,7 @@
 
 ### 更新baseUrl
    * 如果你的项目中请求地址前缀是统一的,请使用以下方法来设置基础url;如果不统一就不用设置了
-```objective c
+```
   [[LazyHttpClient getInstance] updateBaseUrl:url];
   或者
   HttpClient *httpClient=[[HttpClient alloc]initWithBaseUrl:url];
@@ -40,9 +40,10 @@
   HttpClient *httpClient=[[HttpClient alloc]init];
   [httpClient updateBaseUrl:url];
 ```
+
 ### get方式请求
    * 以下是block回调方式,delegate方式请自行看例子;例子的回调是重新包装过的,为了使用更加简单
-```objective c
+````
     RequestParam* param=[[RequestParam alloc]initWithUrl:@"/mobile/get"];
     [param addBody:self.phoneText.text withKey:@"phone"];
     [param addBody:@"158e0590ea4e597836384817ee4108f3" withKey:@"key"];
@@ -52,10 +53,11 @@
     } fail:^(NSString *requestId, NSInteger *errorCode, NSString *errorMsaaege) {
         self.lable.text=[NSString stringWithFormat:@"获取手机号归属地错误,错误原因:%@",errorMsaaege];
     }];
-```
+````
+
 ### post方式请求
-   * * 以下是block回调方式,delegate方式请自行看例子;例子是经过包装了的
-```objective c
+   * 以下是block回调方式,delegate方式请自行看例子;例子是经过包装了的
+````
      NSString*theUrl=@"/qqevaluate/qq";
      RequestParam* param=[[RequestParam alloc]initWithUrl:theUrl];
      [param addBody:self.phoneText.text withKey:@"qq"];
@@ -66,7 +68,7 @@
       } fail:^(NSString *requestId, NSInteger *errorCode, NSString *errorMsaaege) {
            self.lable.text=[NSString stringWithFormat:@"调用QQ测凶吉接口错误,错误原因:%@",errorMsaaege];
       }];
-```
+````
 ### 上传
    * 待续...
    
