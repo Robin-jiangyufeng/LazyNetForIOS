@@ -1,6 +1,6 @@
         LazyNetForIOS
 ---------------------
-# 由于本人不太会写文章,有写得不好得地方请见谅,之前也是一直都是写的android的,这是第一次写ios的
+# 由于本人不太会写文章,有写得不好得地方请见谅
 #  项目介绍
 ### 项目地址
   * [LazyNetForIOS](https://github.com/Robin-jiangyufeng/LazyNetForIOS)
