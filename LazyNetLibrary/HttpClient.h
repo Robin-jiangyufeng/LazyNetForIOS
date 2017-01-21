@@ -3,7 +3,7 @@
 //  LazyNetLibrary
 //  http请求
 //  Created by 江钰锋 on 2017/1/9.
-//  Copyright © 2017年 WeiJi. All rights reserved.
+//  Copyright © 2017年 jiangyufeng. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

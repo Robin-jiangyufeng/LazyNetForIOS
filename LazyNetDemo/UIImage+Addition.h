@@ -3,7 +3,7 @@
 //  LazyNetDemo
 //
 //  Created by Ray on 16/7/20.
-//  Copyright © 2016年 WeiJi. All rights reserved.
+//  Copyright © 2016年 jiangyufeng. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

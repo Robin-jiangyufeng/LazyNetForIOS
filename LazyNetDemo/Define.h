@@ -2,7 +2,7 @@
 //  Define.h
 //
 //  Created by WKY on 16/7/14.
-//  Copyright © 2016年 WeiJi. All rights reserved.
+//  Copyright © 2016年 jiangyufeng. All rights reserved.
 //
 
 #ifndef Define_h

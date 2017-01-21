@@ -3,7 +3,7 @@
 //  LazyNetDemo
 //
 //  Created by 江钰锋 on 2016/10/18.
-//  Copyright © 2016年 WeiJi. All rights reserved.
+//  Copyright © 2016年 jiangyufeng. All rights reserved.
 //
 
 @interface BaseResponseModel : NSObject
