@@ -1,6 +1,6 @@
 //
 //  ResponseCallback.h
-//  WeiJiFIN
+//  LazyNetLibrary
 //
 //  Created by 江钰锋 on 2017/1/12.
 //  Copyright © 2017年 WeiJi. All rights reserved.

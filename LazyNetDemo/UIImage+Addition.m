@@ -1,6 +1,6 @@
 //
 //  UIImage+Addition.m
-//  WeiJiFIN
+//  LazyNetDemo
 //
 //  Created by Ray on 16/7/20.
 //  Copyright © 2016年 WeiJi. All rights reserved.
