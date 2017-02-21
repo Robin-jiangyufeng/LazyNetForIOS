@@ -404,14 +404,14 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
             [JSONUtils dictionaryToJSONString:[param getBodys]],
             [JSONUtils dictionaryToJSONString:responseObject]);
     id response=[responseProcess process:responseObject];
+    if(loadingDelegate){
+        [loadingDelegate onSuccess:[param requestId] withResponse:response];
+    }
     if(success){
         success([param requestId],response);
     }
     if(delegate){
         [delegate onSuccess:[param requestId] withResponse:response];
-    }
-    if(loadingDelegate){
-        [loadingDelegate onSuccess:[param requestId] withResponse:response];
     }
 }
 
@@ -430,14 +430,14 @@ NSString* const HTTPCacheSaveName = @"LazyHttpCache";
             [param getBodys],
             [NSString stringWithFormat:@"%d",(int)error.code],
             error.localizedDescription);
+    if(loadingDelegate){
+        [loadingDelegate onFail:[param requestId] withCode:error.code withMessage:error.localizedDescription];
+    }
     if(fail){
         fail([param requestId],error.code,error.localizedDescription);
     }
     if(delegate){
         [delegate onFail:[param requestId] withCode:error.code withMessage:error.localizedDescription];
-    }
-    if(loadingDelegate){
-        [loadingDelegate onFail:[param requestId] withCode:error.code withMessage:error.localizedDescription];
     }
 }
 
@@ -462,26 +462,26 @@ withRequestLoadCacheBlock:(RequestLoadCacheBlock)cacheBlock                     
             break;
         case USE_CACHE_UPDATE_CACHE:
             response=[_cacheManager objectForKey:key];
+            if(loadingDelegate){
+                [loadingDelegate onLoadCache:[requestParam requestId] withResponse:[responseProcess process:response]];
+            }
             if(cacheBlock){
                 cacheBlock([requestParam requestId],[responseProcess process:response]);
             }
             if(delegate){
                 [delegate onLoadCache:[requestParam requestId] withResponse:[responseProcess process:response]];
-            }
-            if(loadingDelegate){
-                [loadingDelegate onLoadCache:[requestParam requestId] withResponse:[responseProcess process:response]];
             }
             break;
         case USE_CACHE:
             response=[_cacheManager objectForKey:key];
+            if(loadingDelegate){
+                [loadingDelegate onLoadCache:[requestParam requestId] withResponse:[responseProcess process:response]];
+            }
             if(cacheBlock){
                 cacheBlock([requestParam requestId],[responseProcess process:response]);
             }
             if(delegate){
                 [delegate onLoadCache:[requestParam requestId] withResponse:[responseProcess process:response]];
-            }
-            if(loadingDelegate){
-                [loadingDelegate onLoadCache:[requestParam requestId] withResponse:[responseProcess process:response]];
             }
             break;
         default:
