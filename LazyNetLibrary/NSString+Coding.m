@@ -1,9 +1,9 @@
 //
 //  NSString+MD5.m
-//  LazyNetLibrary
+//  WeiJiFIN
 //
 //  Created by 江钰锋 on 2017/1/9.
-//  Copyright © 2017年 jiangyufeng. All rights reserved.
+//  Copyright © 2017年 WeiJi. All rights reserved.
 //
 
 #import "NSString+Coding.h"
@@ -23,6 +23,22 @@
         [ms appendFormat:@"%02x", (int)(digest[i])];
     }
     return [ms copy];
+}
+
+- (BOOL)isUrl
+{
+    if(self == nil)
+        return NO;
+    NSString *url;
+    if (self.length>4 && [[self substringToIndex:4] isEqualToString:@"www."]) {
+        url = [NSString stringWithFormat:@"http://%@",self];
+    }else{
+        url = self;
+    }
+    if(url&& ([url hasPrefix:@"http"]||[url hasPrefix:@"https"])) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

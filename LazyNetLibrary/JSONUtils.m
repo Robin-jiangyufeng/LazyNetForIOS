@@ -1,9 +1,9 @@
 //
 //  JSONUtils.m
-//  LazyNetLibrary
+//  WeiJiFIN
 //  json解析工具
 //  Created by 江钰锋 on 2017/1/6.
-//  Copyright © 2017年 jiangyufeng. All rights reserved.
+//  Copyright © 2017年 WeiJi. All rights reserved.
 //
 
 #import "JSONUtils.h"

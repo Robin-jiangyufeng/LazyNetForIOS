@@ -8,6 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		14A84A0D07D67E70F25DB40C /* libPods-LazyNetLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C275CD7681B753A7494CF5F2 /* libPods-LazyNetLibrary.a */; };
+		4E281B152059278B00586BB6 /* ResponseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281AFF2059278900586BB6 /* ResponseProcess.m */; };
+		4E281B162059278B00586BB6 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B002059278900586BB6 /* JSONUtils.m */; };
+		4E281B172059278B00586BB6 /* JSONUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B012059278900586BB6 /* JSONUtils.h */; };
+		4E281B182059278B00586BB6 /* LazyHttpClient+LazySynchro.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B022059278900586BB6 /* LazyHttpClient+LazySynchro.m */; };
+		4E281B192059278B00586BB6 /* HttpClient+Synchro.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B032059278A00586BB6 /* HttpClient+Synchro.h */; };
+		4E281B1A2059278B00586BB6 /* NSString+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B042059278A00586BB6 /* NSString+Coding.m */; };
+		4E281B1B2059278B00586BB6 /* HttpClient+Synchro.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B052059278A00586BB6 /* HttpClient+Synchro.m */; };
+		4E281B1C2059278B00586BB6 /* HttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B062059278A00586BB6 /* HttpClient.h */; };
+		4E281B1D2059278B00586BB6 /* RequestParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B072059278A00586BB6 /* RequestParam.h */; };
+		4E281B1E2059278B00586BB6 /* ResponseCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B082059278A00586BB6 /* ResponseCallback.h */; };
+		4E281B1F2059278B00586BB6 /* LazyHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B092059278A00586BB6 /* LazyHttpClient.m */; };
+		4E281B202059278B00586BB6 /* LazyNetLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B0A2059278A00586BB6 /* LazyNetLogger.h */; };
+		4E281B212059278B00586BB6 /* LazyNetLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B0B2059278A00586BB6 /* LazyNetLibrary.h */; };
+		4E281B222059278B00586BB6 /* RequestParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B0C2059278A00586BB6 /* RequestParam.m */; };
+		4E281B232059278B00586BB6 /* JSONResponseProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B0D2059278A00586BB6 /* JSONResponseProcess.h */; };
+		4E281B242059278B00586BB6 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B0E2059278A00586BB6 /* HttpClient.m */; };
+		4E281B252059278B00586BB6 /* JSONResponseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B0F2059278A00586BB6 /* JSONResponseProcess.m */; };
+		4E281B262059278B00586BB6 /* LazyNetLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E281B102059278A00586BB6 /* LazyNetLogger.m */; };
+		4E281B272059278B00586BB6 /* LazyHttpClient+LazySynchro.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B112059278A00586BB6 /* LazyHttpClient+LazySynchro.h */; };
+		4E281B282059278B00586BB6 /* NSString+Coding.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B122059278B00586BB6 /* NSString+Coding.h */; };
+		4E281B292059278B00586BB6 /* ResponseProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B132059278B00586BB6 /* ResponseProcess.h */; };
+		4E281B2A2059278B00586BB6 /* LazyHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E281B142059278B00586BB6 /* LazyHttpClient.h */; };
 		4E288E411E306A2500C3DC38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E401E306A2500C3DC38 /* main.m */; };
 		4E288E441E306A2500C3DC38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E431E306A2500C3DC38 /* AppDelegate.m */; };
 		4E288E471E306A2500C3DC38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E461E306A2500C3DC38 /* ViewController.m */; };
@@ -18,24 +40,8 @@
 		4E288E651E306A2500C3DC38 /* LazyNetDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E641E306A2500C3DC38 /* LazyNetDemoUITests.m */; };
 		4E288E7E1E306A5400C3DC38 /* LazyNetLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E288E751E306A5300C3DC38 /* LazyNetLibrary.framework */; };
 		4E288E851E306A5400C3DC38 /* LazyNetLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E841E306A5400C3DC38 /* LazyNetLibraryTests.m */; };
-		4E288E871E306A5400C3DC38 /* LazyNetLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288E771E306A5300C3DC38 /* LazyNetLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E288E8A1E306A5400C3DC38 /* LazyNetLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E288E751E306A5300C3DC38 /* LazyNetLibrary.framework */; };
 		4E288E8B1E306A5400C3DC38 /* LazyNetLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E288E751E306A5300C3DC38 /* LazyNetLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4E288EA21E306AF100C3DC38 /* HttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288E931E306AF100C3DC38 /* HttpClient.h */; };
-		4E288EA31E306AF100C3DC38 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E941E306AF100C3DC38 /* HttpClient.m */; };
-		4E288EA41E306AF100C3DC38 /* JSONResponseProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288E951E306AF100C3DC38 /* JSONResponseProcess.h */; };
-		4E288EA51E306AF100C3DC38 /* JSONResponseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E961E306AF100C3DC38 /* JSONResponseProcess.m */; };
-		4E288EA61E306AF100C3DC38 /* JSONUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288E971E306AF100C3DC38 /* JSONUtils.h */; };
-		4E288EA71E306AF100C3DC38 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E981E306AF100C3DC38 /* JSONUtils.m */; };
-		4E288EA81E306AF100C3DC38 /* LazyHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288E991E306AF100C3DC38 /* LazyHttpClient.h */; };
-		4E288EA91E306AF100C3DC38 /* LazyHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E9A1E306AF100C3DC38 /* LazyHttpClient.m */; };
-		4E288EAA1E306AF100C3DC38 /* NSString+Coding.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288E9B1E306AF100C3DC38 /* NSString+Coding.h */; };
-		4E288EAB1E306AF100C3DC38 /* NSString+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E9C1E306AF100C3DC38 /* NSString+Coding.m */; };
-		4E288EAC1E306AF100C3DC38 /* RequestParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288E9D1E306AF100C3DC38 /* RequestParam.h */; };
-		4E288EAD1E306AF100C3DC38 /* RequestParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288E9E1E306AF100C3DC38 /* RequestParam.m */; };
-		4E288EAE1E306AF100C3DC38 /* ResponseCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288E9F1E306AF100C3DC38 /* ResponseCallback.h */; };
-		4E288EAF1E306AF100C3DC38 /* ResponseProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E288EA01E306AF100C3DC38 /* ResponseProcess.h */; };
-		4E288EB01E306AF100C3DC38 /* ResponseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EA11E306AF100C3DC38 /* ResponseProcess.m */; };
 		4E288EB91E306BC900C3DC38 /* GetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EB31E306BC900C3DC38 /* GetViewController.m */; };
 		4E288EBA1E306BC900C3DC38 /* UIColor+WJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EB61E306BC900C3DC38 /* UIColor+WJExtend.m */; };
 		4E288EBB1E306BC900C3DC38 /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E288EB81E306BC900C3DC38 /* UIImage+Addition.m */; };
@@ -107,6 +113,28 @@
 /* Begin PBXFileReference section */
 		0E72BDCB8D923BC94655A6D4 /* Pods-LazyNetForIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyNetForIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LazyNetForIOS/Pods-LazyNetForIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2F91B860C2ED7340AAD08E30 /* Pods-LazyNetDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyNetDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazyNetDemo/Pods-LazyNetDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4E281AFF2059278900586BB6 /* ResponseProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseProcess.m; sourceTree = "<group>"; };
+		4E281B002059278900586BB6 /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
+		4E281B012059278900586BB6 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
+		4E281B022059278900586BB6 /* LazyHttpClient+LazySynchro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LazyHttpClient+LazySynchro.m"; sourceTree = "<group>"; };
+		4E281B032059278A00586BB6 /* HttpClient+Synchro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HttpClient+Synchro.h"; sourceTree = "<group>"; };
+		4E281B042059278A00586BB6 /* NSString+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Coding.m"; sourceTree = "<group>"; };
+		4E281B052059278A00586BB6 /* HttpClient+Synchro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HttpClient+Synchro.m"; sourceTree = "<group>"; };
+		4E281B062059278A00586BB6 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		4E281B072059278A00586BB6 /* RequestParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestParam.h; sourceTree = "<group>"; };
+		4E281B082059278A00586BB6 /* ResponseCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseCallback.h; sourceTree = "<group>"; };
+		4E281B092059278A00586BB6 /* LazyHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyHttpClient.m; sourceTree = "<group>"; };
+		4E281B0A2059278A00586BB6 /* LazyNetLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyNetLogger.h; sourceTree = "<group>"; };
+		4E281B0B2059278A00586BB6 /* LazyNetLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyNetLibrary.h; sourceTree = "<group>"; };
+		4E281B0C2059278A00586BB6 /* RequestParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestParam.m; sourceTree = "<group>"; };
+		4E281B0D2059278A00586BB6 /* JSONResponseProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONResponseProcess.h; sourceTree = "<group>"; };
+		4E281B0E2059278A00586BB6 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		4E281B0F2059278A00586BB6 /* JSONResponseProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONResponseProcess.m; sourceTree = "<group>"; };
+		4E281B102059278A00586BB6 /* LazyNetLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyNetLogger.m; sourceTree = "<group>"; };
+		4E281B112059278A00586BB6 /* LazyHttpClient+LazySynchro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LazyHttpClient+LazySynchro.h"; sourceTree = "<group>"; };
+		4E281B122059278B00586BB6 /* NSString+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Coding.h"; sourceTree = "<group>"; };
+		4E281B132059278B00586BB6 /* ResponseProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseProcess.h; sourceTree = "<group>"; };
+		4E281B142059278B00586BB6 /* LazyHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyHttpClient.h; sourceTree = "<group>"; };
 		4E288E3D1E306A2500C3DC38 /* LazyNetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyNetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E288E401E306A2500C3DC38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E288E421E306A2500C3DC38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,26 +152,10 @@
 		4E288E641E306A2500C3DC38 /* LazyNetDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyNetDemoUITests.m; sourceTree = "<group>"; };
 		4E288E661E306A2500C3DC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E288E751E306A5300C3DC38 /* LazyNetLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyNetLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E288E771E306A5300C3DC38 /* LazyNetLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyNetLibrary.h; sourceTree = "<group>"; };
 		4E288E781E306A5300C3DC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E288E7D1E306A5300C3DC38 /* LazyNetLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyNetLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E288E841E306A5400C3DC38 /* LazyNetLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyNetLibraryTests.m; sourceTree = "<group>"; };
 		4E288E861E306A5400C3DC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E288E931E306AF100C3DC38 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
-		4E288E941E306AF100C3DC38 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
-		4E288E951E306AF100C3DC38 /* JSONResponseProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONResponseProcess.h; sourceTree = "<group>"; };
-		4E288E961E306AF100C3DC38 /* JSONResponseProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONResponseProcess.m; sourceTree = "<group>"; };
-		4E288E971E306AF100C3DC38 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
-		4E288E981E306AF100C3DC38 /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
-		4E288E991E306AF100C3DC38 /* LazyHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyHttpClient.h; sourceTree = "<group>"; };
-		4E288E9A1E306AF100C3DC38 /* LazyHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyHttpClient.m; sourceTree = "<group>"; };
-		4E288E9B1E306AF100C3DC38 /* NSString+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Coding.h"; sourceTree = "<group>"; };
-		4E288E9C1E306AF100C3DC38 /* NSString+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Coding.m"; sourceTree = "<group>"; };
-		4E288E9D1E306AF100C3DC38 /* RequestParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestParam.h; sourceTree = "<group>"; };
-		4E288E9E1E306AF100C3DC38 /* RequestParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestParam.m; sourceTree = "<group>"; };
-		4E288E9F1E306AF100C3DC38 /* ResponseCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseCallback.h; sourceTree = "<group>"; };
-		4E288EA01E306AF100C3DC38 /* ResponseProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseProcess.h; sourceTree = "<group>"; };
-		4E288EA11E306AF100C3DC38 /* ResponseProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseProcess.m; sourceTree = "<group>"; };
 		4E288EB11E306BC900C3DC38 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		4E288EB21E306BC900C3DC38 /* GetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetViewController.h; sourceTree = "<group>"; };
 		4E288EB31E306BC900C3DC38 /* GetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetViewController.m; sourceTree = "<group>"; };
@@ -317,22 +329,28 @@
 		4E288E761E306A5300C3DC38 /* LazyNetLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				4E288E931E306AF100C3DC38 /* HttpClient.h */,
-				4E288E941E306AF100C3DC38 /* HttpClient.m */,
-				4E288E951E306AF100C3DC38 /* JSONResponseProcess.h */,
-				4E288E961E306AF100C3DC38 /* JSONResponseProcess.m */,
-				4E288E971E306AF100C3DC38 /* JSONUtils.h */,
-				4E288E981E306AF100C3DC38 /* JSONUtils.m */,
-				4E288E991E306AF100C3DC38 /* LazyHttpClient.h */,
-				4E288E9A1E306AF100C3DC38 /* LazyHttpClient.m */,
-				4E288E9B1E306AF100C3DC38 /* NSString+Coding.h */,
-				4E288E9C1E306AF100C3DC38 /* NSString+Coding.m */,
-				4E288E9D1E306AF100C3DC38 /* RequestParam.h */,
-				4E288E9E1E306AF100C3DC38 /* RequestParam.m */,
-				4E288E9F1E306AF100C3DC38 /* ResponseCallback.h */,
-				4E288EA01E306AF100C3DC38 /* ResponseProcess.h */,
-				4E288EA11E306AF100C3DC38 /* ResponseProcess.m */,
-				4E288E771E306A5300C3DC38 /* LazyNetLibrary.h */,
+				4E281B062059278A00586BB6 /* HttpClient.h */,
+				4E281B0E2059278A00586BB6 /* HttpClient.m */,
+				4E281B032059278A00586BB6 /* HttpClient+Synchro.h */,
+				4E281B052059278A00586BB6 /* HttpClient+Synchro.m */,
+				4E281B0D2059278A00586BB6 /* JSONResponseProcess.h */,
+				4E281B0F2059278A00586BB6 /* JSONResponseProcess.m */,
+				4E281B012059278900586BB6 /* JSONUtils.h */,
+				4E281B002059278900586BB6 /* JSONUtils.m */,
+				4E281B142059278B00586BB6 /* LazyHttpClient.h */,
+				4E281B092059278A00586BB6 /* LazyHttpClient.m */,
+				4E281B112059278A00586BB6 /* LazyHttpClient+LazySynchro.h */,
+				4E281B022059278900586BB6 /* LazyHttpClient+LazySynchro.m */,
+				4E281B0B2059278A00586BB6 /* LazyNetLibrary.h */,
+				4E281B0A2059278A00586BB6 /* LazyNetLogger.h */,
+				4E281B102059278A00586BB6 /* LazyNetLogger.m */,
+				4E281B122059278B00586BB6 /* NSString+Coding.h */,
+				4E281B042059278A00586BB6 /* NSString+Coding.m */,
+				4E281B072059278A00586BB6 /* RequestParam.h */,
+				4E281B0C2059278A00586BB6 /* RequestParam.m */,
+				4E281B082059278A00586BB6 /* ResponseCallback.h */,
+				4E281B132059278B00586BB6 /* ResponseProcess.h */,
+				4E281AFF2059278900586BB6 /* ResponseProcess.m */,
 				4E288E781E306A5300C3DC38 /* Info.plist */,
 			);
 			path = LazyNetLibrary;
@@ -399,15 +417,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E288EA81E306AF100C3DC38 /* LazyHttpClient.h in Headers */,
-				4E288EAF1E306AF100C3DC38 /* ResponseProcess.h in Headers */,
-				4E288EAC1E306AF100C3DC38 /* RequestParam.h in Headers */,
-				4E288EA61E306AF100C3DC38 /* JSONUtils.h in Headers */,
-				4E288E871E306A5400C3DC38 /* LazyNetLibrary.h in Headers */,
-				4E288EAE1E306AF100C3DC38 /* ResponseCallback.h in Headers */,
-				4E288EA21E306AF100C3DC38 /* HttpClient.h in Headers */,
-				4E288EAA1E306AF100C3DC38 /* NSString+Coding.h in Headers */,
-				4E288EA41E306AF100C3DC38 /* JSONResponseProcess.h in Headers */,
+				4E281B202059278B00586BB6 /* LazyNetLogger.h in Headers */,
+				4E281B272059278B00586BB6 /* LazyHttpClient+LazySynchro.h in Headers */,
+				4E281B192059278B00586BB6 /* HttpClient+Synchro.h in Headers */,
+				4E281B292059278B00586BB6 /* ResponseProcess.h in Headers */,
+				4E281B172059278B00586BB6 /* JSONUtils.h in Headers */,
+				4E281B2A2059278B00586BB6 /* LazyHttpClient.h in Headers */,
+				4E281B282059278B00586BB6 /* NSString+Coding.h in Headers */,
+				4E281B232059278B00586BB6 /* JSONResponseProcess.h in Headers */,
+				4E281B1D2059278B00586BB6 /* RequestParam.h in Headers */,
+				4E281B1E2059278B00586BB6 /* ResponseCallback.h in Headers */,
+				4E281B1C2059278B00586BB6 /* HttpClient.h in Headers */,
+				4E281B212059278B00586BB6 /* LazyNetLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +543,7 @@
 				TargetAttributes = {
 					4E288E3C1E306A2500C3DC38 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3VA89MX2F4;
 						ProvisioningStyle = Automatic;
 					};
 					4E288E541E306A2500C3DC38 = {
@@ -615,13 +637,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazyNetDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5C6EA64A1ABC51EBB68046C8 /* [CP] Embed Pods Frameworks */ = {
@@ -675,13 +700,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazyNetLibrary-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -730,13 +758,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E288EA71E306AF100C3DC38 /* JSONUtils.m in Sources */,
-				4E288EAD1E306AF100C3DC38 /* RequestParam.m in Sources */,
-				4E288EB01E306AF100C3DC38 /* ResponseProcess.m in Sources */,
-				4E288EA51E306AF100C3DC38 /* JSONResponseProcess.m in Sources */,
-				4E288EA91E306AF100C3DC38 /* LazyHttpClient.m in Sources */,
-				4E288EA31E306AF100C3DC38 /* HttpClient.m in Sources */,
-				4E288EAB1E306AF100C3DC38 /* NSString+Coding.m in Sources */,
+				4E281B1F2059278B00586BB6 /* LazyHttpClient.m in Sources */,
+				4E281B152059278B00586BB6 /* ResponseProcess.m in Sources */,
+				4E281B1B2059278B00586BB6 /* HttpClient+Synchro.m in Sources */,
+				4E281B162059278B00586BB6 /* JSONUtils.m in Sources */,
+				4E281B182059278B00586BB6 /* LazyHttpClient+LazySynchro.m in Sources */,
+				4E281B252059278B00586BB6 /* JSONResponseProcess.m in Sources */,
+				4E281B222059278B00586BB6 /* RequestParam.m in Sources */,
+				4E281B242059278B00586BB6 /* HttpClient.m in Sources */,
+				4E281B1A2059278B00586BB6 /* NSString+Coding.m in Sources */,
+				4E281B262059278B00586BB6 /* LazyNetLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,6 +924,7 @@
 			baseConfigurationReference = 853B5A7515500F7C7D4CC7CF /* Pods-LazyNetDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3VA89MX2F4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LazyNetDemo/LazyNetDemo.pch";
 				INFOPLIST_FILE = LazyNetDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -906,6 +938,7 @@
 			baseConfigurationReference = 2F91B860C2ED7340AAD08E30 /* Pods-LazyNetDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3VA89MX2F4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LazyNetDemo/LazyNetDemo.pch";
 				INFOPLIST_FILE = LazyNetDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

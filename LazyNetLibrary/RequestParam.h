@@ -1,9 +1,9 @@
 //
 //  ReuqestParam.h
-//  LazyNetLibrary
+//  WeiJiFIN
 //  请求需要的相关参数
 //  Created by 江钰锋 on 2017/1/9.
-//  Copyright © 2017年 jiangyufeng. All rights reserved.
+//  Copyright © 2017年 WeiJi. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -19,6 +19,18 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
     /** 先加载缓存,再请求网络,不更新缓存 */
     USE_CACHE=4
 };
+/**文件信息包装类*/
+@interface FileInfor : NSObject
+/**文件实体,类型只能为括号中的三种几种(NSData,NSInputStream,NSURL)*/
+@property (nonatomic, strong) id body;
+/**文件名*/
+@property (nonatomic, copy) NSString *fileName;
+/**文件类型*/
+@property (nonatomic, copy) NSString *mimeType;
+/**提交的数据的长度*/
+@property (nonatomic, assign) unsigned long long bodyContentLength;
+@property (nonatomic, assign) NSError* __autoreleasing*error;
+@end
 
 @interface RequestParam : NSObject{
     /**请求id*/
@@ -29,6 +41,8 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
     NSMutableDictionary*_heasers;
     /**请求体*/
     NSMutableDictionary*_bodys;
+    /**请求头*/
+    NSMutableDictionary*_files;
 }
 
 /**请求超时时间*/
@@ -52,6 +66,9 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
 /**的到请求id*/
 -(NSString*)requestId;
 
+/**重置请求id*/
+-(void)setRequestId:(NSString*)requestId;
+
 /**的到当前请求的唯一标识*/
 -(NSString*)getUniqueId;
 
@@ -63,7 +80,7 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
 
 /**
  * 设置单个请求头(会替换对应的key)
- * @param 
+ * @param
  */
 -(void)setHeader:(NSString*)values withKey:(NSString*)key;
 
@@ -73,6 +90,39 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
  *
  */
 -(void)setHeaders:(NSDictionary*)headers;
+
+/**获取要提交的表单*/
+-(NSDictionary*)files;
+
+/**
+ * 添加要上传的文件
+ * @param name 名称
+ * @param fileInfor 文件信息
+ */
+-(void)addFile:(NSString*)name fileInfor:(FileInfor*)fileInfor;
+
+/***
+ * 添加要上传的文件
+ * @param name
+ * @param fileName 文件名
+ * @mimeType 文件类型
+ * @param body 上传的文件实体
+ * @param lenght 长度
+ * @error 添加上传文件错误信息
+ */
+-(void)addFile:(NSString*)name
+      fileName:(NSString*)fileName
+      mimeType:(NSString*)mimeType
+          body:(id)body
+        length:(unsigned long long)length
+         error:(NSError* __autoreleasing)error;
+
+/***
+ * 添加要上传的文件
+ *
+ * @param files
+ */
+-(void)addFiles:(NSDictionary*)files;
 
 /**获取body字典*/
 -(NSDictionary*)getBodys;

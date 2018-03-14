@@ -1,9 +1,9 @@
 //
 //  NSString+MD5.h
-//  LazyNetLibrary
+//  WeiJiFIN
 //
 //  Created by 江钰锋 on 2017/1/9.
-//  Copyright © 2017年 jiangyufeng. All rights reserved.
+//  Copyright © 2017年 WeiJi. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,5 +13,10 @@
  * stringMD5加密
  */
 -(instancetype)toMD5;
+
+/***
+ 判断string是否是url
+ */
+- (BOOL)isUrl;
 
 @end

@@ -1,13 +1,12 @@
 //
 //  LazyHttpClient.m
-//  LazyNetLibrary
+//  WeiJiFIN
 //
 //  Created by 江钰锋 on 2017/1/11.
-//  Copyright © 2017年 jiangyufeng. All rights reserved.
+//  Copyright © 2017年 WeiJi. All rights reserved.
 //
 
 #import "LazyHttpClient.h"
-#import "JSONResponseProcess.h"
 
 @implementation LazyHttpClient
 
@@ -33,31 +32,34 @@
 }
 
 -(void)GET_JSON:(NSString*)VCId
-           param:(RequestParam*)param
-   responseClazz:(Class)clazz
- loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
-       loadCache:(RequestLoadCacheBlock)loadCache
-         success:(RequestSuccessBlock)success
-            fail:(RequestFailBlock)fail
+          param:(RequestParam*)param
+  responseProcess:(JSONResponseProcess*)responseProcess
+loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
+      loadCache:(RequestLoadCacheBlock)loadCache
+        success:(RequestSuccessBlock)success
+           fail:(RequestFailBlock)fail
 {
     LazyBURLSessionTask*task=[self doGet:param
- responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate
-       loadCache:loadCache
-         success:success
-            fail:fail];
+                         responseProcess:responseProcess
+                         loadingDelegate:loadingDelegate
+                               loadCache:loadCache
+                                 success:success
+                                    fail:fail];
     if(task){
-       [self addViewControllerTask:VCId withRequestId:[param requestId]];
+        [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
 }
 
 -(void)GET_JSON:(NSString*)VCId
-           param:(RequestParam*)param
-   responseClazz:(Class)clazz
- loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
+          param:(RequestParam*)param
+  responseProcess:(JSONResponseProcess*)responseProcess
+loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
 callbackdelegate:(id<ResponseCallbackDelegate>)delegate
 {
     LazyBURLSessionTask*task=[self doGet:param
- responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate callbackdelegate:delegate];
+                         responseProcess:responseProcess
+                         loadingDelegate:loadingDelegate
+                        callbackdelegate:delegate];
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
@@ -65,12 +67,14 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
 
 -(void)POST_JSON:(NSString*)VCId
            param:(RequestParam*)param
-   responseClazz:(Class)clazz
+   responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
 callbackdelegate:(id<ResponseCallbackDelegate>)delegate
 {
     LazyBURLSessionTask*task=[self doPost:param
- responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate callbackdelegate:delegate];
+                          responseProcess:responseProcess
+                          loadingDelegate:loadingDelegate
+                         callbackdelegate:delegate];
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
@@ -78,17 +82,51 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
 
 -(void)POST_JSON:(NSString*)VCId
            param:(RequestParam*)param
-   responseClazz:(Class)clazz
+   responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
        loadCache:(RequestLoadCacheBlock)loadCache
          success:(RequestSuccessBlock)success
             fail:(RequestFailBlock)fail
 {
     LazyBURLSessionTask*task=[self doPost:param
- responseProcess:[[JSONResponseProcess alloc] initWithClass:clazz]loadingDelegate:loadingDelegate
-       loadCache:loadCache
-         success:success
-            fail:fail];
+                          responseProcess:responseProcess
+                          loadingDelegate:loadingDelegate
+                                loadCache:loadCache
+                                  success:success
+                                     fail:fail];
+    if(task){
+        [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    }
+}
+
+-(void)POST_FORM:(NSString *)VCId
+           param:(RequestParam *)param
+ responseProcess:(JSONResponseProcess*)responseProcess
+ loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
+callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate{
+    LazyBURLSessionTask*task=[self doFormPost:param
+                              responseProcess:responseProcess
+                              loadingDelegate:loadingDelegate
+                             callbackdelegate:delegate];
+    if(task){
+        [self addViewControllerTask:VCId withRequestId:[param requestId]];
+    }
+}
+
+-(void)POST_FORM:(NSString *)VCId
+           param:(RequestParam *)param
+ responseProcess:(JSONResponseProcess*)responseProcess
+ loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
+        progress:(RequestProgressBlock)progress
+       loadCache:(RequestLoadCacheBlock)loadCache
+         success:(RequestSuccessBlock)success
+            fail:(RequestFailBlock)fail{
+    LazyBURLSessionTask*task=[self doFormPost:param
+                              responseProcess:responseProcess
+                              loadingDelegate:loadingDelegate
+                                     progress:progress
+                                    loadCache:loadCache
+                                      success:success fail:fail];
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }

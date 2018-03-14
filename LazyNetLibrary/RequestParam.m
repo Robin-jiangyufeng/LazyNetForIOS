@@ -1,14 +1,15 @@
 //
 //  ReuqestParam.m
-//  LazyNetLibrary
+//  WeiJiFIN
 //  请求需要的相关参数
 //  Created by 江钰锋 on 2017/1/9.
-//  Copyright © 2017年 jiangyufeng. All rights reserved.
+//  Copyright © 2017年 WeiJi. All rights reserved.
 //
 
 #import "RequestParam.h"
 #import "JSONUtils.h"
-
+@implementation FileInfor
+@end
 @implementation RequestParam
 
 -(instancetype)initWithUrl:(NSString *)url{
@@ -26,7 +27,8 @@
         }
         _heasers=[[NSMutableDictionary alloc]init];
         _bodys=[[NSMutableDictionary alloc]init];
-        _request_timeout=10;
+        _files=[[NSMutableDictionary alloc]init];
+        _request_timeout=15;
         _cacheLoadType=NOT_USE_CACHE;
     }
     return self;
@@ -34,6 +36,10 @@
 
 -(NSString *)requestId{
     return _requestId;
+}
+
+-(void)setRequestId:(NSString*)requestId{
+    _requestId=requestId;
 }
 
 -(NSString *)getUniqueId{
@@ -66,6 +72,39 @@
 -(void)setHeaders:(NSDictionary*)headers{
     [_heasers removeAllObjects];
     [_heasers setDictionary:headers];
+}
+
+-(NSDictionary *)files{
+    return _files;
+}
+
+-(void)addFile:(NSString *)name fileInfor:(FileInfor *)fileInfor{
+    if(_files){
+        [_files setValue:fileInfor forKey:name];
+    }
+}
+
+-(void)addFile:(NSString *)name
+      fileName:(NSString *)fileName
+      mimeType:(NSString *)mimeType
+          body:(id)body
+        length:(unsigned long long)length
+         error:(NSError *__autoreleasing)error{
+    if(_files){
+        FileInfor*fileInfor=[[FileInfor alloc]init];
+        fileInfor.fileName=fileName;
+        fileInfor.mimeType=mimeType;
+        fileInfor.body=body;
+        fileInfor.bodyContentLength=length;
+        fileInfor.error=&(error);
+        [_files setValue:fileInfor forKey:name];
+    }
+}
+
+-(void)addFiles:(NSDictionary *)files{
+    if(_files){
+        [_files setDictionary:files];
+    }
 }
 
 -(NSDictionary*)getBodys{
@@ -101,7 +140,7 @@
  */
 -(void)addBodys:(NSDictionary*)bodys{
     if(!bodys)return;
-    [_bodys setDictionary:bodys];
+    [_bodys addEntriesFromDictionary:bodys];
 }
 
 /**
