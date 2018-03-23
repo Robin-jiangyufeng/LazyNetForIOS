@@ -85,7 +85,7 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate;
  * @param param 请求参数
  * @param responseProcess 反馈加工处理器
  * @param loadingDelegate 上传进度反馈
- * @param callbackdelegate 反馈代理
+ * @param delegate 反馈代理
  */
 -(void)POST_FORM:(NSString*)VCId
            param:(RequestParam*)param
@@ -126,7 +126,7 @@ callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate;
 /**
  * 取消与对应ViewController相关的所有请求
  *
- * @param VC
+ * @param VCId ViewController页面id
  */
 -(void)cancelViewControllerTask:(NSString*)VCId;
 @end

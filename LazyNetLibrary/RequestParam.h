@@ -80,7 +80,8 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
 
 /**
  * 设置单个请求头(会替换对应的key)
- * @param
+ * @param values values
+ * @param key key
  */
 -(void)setHeader:(NSString*)values withKey:(NSString*)key;
 
@@ -103,11 +104,11 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
 
 /***
  * 添加要上传的文件
- * @param name
+ * @param name 名称
  * @param fileName 文件名
  * @mimeType 文件类型
  * @param body 上传的文件实体
- * @param lenght 长度
+ * @param length 长度
  * @error 添加上传文件错误信息
  */
 -(void)addFile:(NSString*)name
@@ -120,7 +121,7 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
 /***
  * 添加要上传的文件
  *
- * @param files
+ * @param files 文件列表
  */
 -(void)addFiles:(NSDictionary*)files;
 
@@ -138,14 +139,14 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
 
 /**
  * 添加请求参数(健值对方式)
- * @param values
- * @param key
+ * @param values values
+ * @param key key
  */
 -(void)addBody:(NSString*)values withKey:(NSString*)key;
 
 /**
  * 添加请求方式(字典方式)
- * @param bodys
+ * @param bodys 请求参数
  */
 -(void)addBodys:(NSDictionary*)bodys;
 

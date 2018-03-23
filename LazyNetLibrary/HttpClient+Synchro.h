@@ -17,16 +17,16 @@
 @interface HttpClient (Synchro)
 /***
  同步的get请求
- @param 请求参数
- @responseProcess 请求反馈信息加工器
+ @param param 请求参数
+ @param responseProcess 请求反馈信息加工器
  */
 -(SyncResponse*)doSyncGet:(RequestParam*)param
           responseProcess:(ResponseProcess*)responseProcess;
 
 /***
  同步的post请求
- @param 请求参数
- @responseProcess 请求反馈信息加工器
+ @param param 请求参数
+ @param responseProcess 请求反馈信息加工器
  */
 -(SyncResponse*)doSyncPost:(RequestParam*)param
           responseProcess:(ResponseProcess*)responseProcess;

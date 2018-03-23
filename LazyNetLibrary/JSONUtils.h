@@ -32,13 +32,13 @@
 
 /**
  * 对象转json字符串
- * @param values
+ * @param values values
  */
 +(NSString*)objectToJSONString:(id)values;
 
 /**
  * 字典转String
- * @param values
+ * @param values values
  */
 +(NSString*)dictionaryToJSONString:(id)values;
 @end
