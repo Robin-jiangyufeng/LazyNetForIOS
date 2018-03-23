@@ -26,10 +26,11 @@
   * 11.日志输出请求信息清晰明了
 
 #   使用方法(以下使用方法只举了部分使用方法的例子,更多使用方法请自己查看代码,或者联系我)
-### 库引入方式
-   * 由于种种原因这个库暂时还没有提交到Cocoapods,如果需要使用请自行导出framework或者把LazyNetLibrary代码直接考到自己项目中
+### 库引入方式 CocoaPods 
+   * 1.添加 pod 'LazyNetLibrary' 到你项目Podfile文件中
+   * 2.在终端中运行 pod install
+   * 3.导入#import 'LazyNetLibrary.h'
 
-  
 ### 所需权限
   * 联网权限
 
