@@ -24,8 +24,13 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  # s.description  = <<-DESC
-  #                  DESC
+  s.description  = <<-DESC
+  The encapsulation of AFNetworking network request.
+  * Think: Why did you write this? What is the focus? What does it do?
+  * CocoaPods will be using this to generate tags, and improve search results.
+  * Try to keep it short, snappy and to the point.
+  * Finally, don't worry about the indent, CocoaPods strips it!
+  DESC
 
   s.homepage     = "https://github.com/Robin-jiangyufeng/LazyNetForIOS"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -52,7 +57,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "loserBoy" => "429257411@qq.com" }
+  s.author             = { "yufeng jiang" => "429257411@qq.com" }
   # Or just: s.author    = "loserBoy"
   # s.authors            = { "loserBoy" => "429257411@qq.com" }
   # s.social_media_url   = "http://twitter.com/loserBoy"
@@ -79,7 +84,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Robin-jiangyufeng/LazyNetForIOS.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Robin-jiangyufeng/LazyNetForIOS.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -118,13 +123,11 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  s.frameworks = "AVFoundation","Foundation"
-  s.dependency 'AFNetworking', '~> 3.0'
-  s.dependency 'TMCache'
-  s.dependency 'MJExtension'
+  # s.frameworks = "AVFoundation","Foundation"
+  s.framework = "Foundation"
   # spec.vendored_frameworks = 'YYBaseLib.framework'
   # s.library   = "iconv"
-  # s.libraries = "AFNetworking", "MJExtension","TMCache"
+  # s.libraries = "AFNetworking", "MJExtension","PINCache"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -133,9 +136,11 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-
+  s.dependency 'AFNetworking'
+  s.dependency 'PINCache'
+  s.dependency 'MJExtension'
 end
