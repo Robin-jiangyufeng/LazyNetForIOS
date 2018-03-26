@@ -16,7 +16,7 @@ FOUNDATION_EXPORT const unsigned char LazyNetLibraryVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <LazyNetLibrary/PublicHeader.h>
 
-#import <AFNetworking/AFHTTPSessionManager.h>
+#import <AFNetworking/AFNetworking.h>
 #import <PINCache/PINCache.h>
 #import <MJExtension/MJExtension.h>
 #import <CommonCrypto/CommonDigest.h>

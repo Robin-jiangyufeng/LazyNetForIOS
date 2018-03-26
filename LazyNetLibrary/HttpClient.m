@@ -8,8 +8,6 @@
 
 #import "HttpClient.h"
 #import "AFNetworkActivityIndicatorManager.h"
-#import "AFURLRequestSerialization.h"
-#import "AFURLResponseSerialization.h"
 #import "PINCache.h"
 #import "JSONUtils.h"
 #import "NSString+Coding.h"
