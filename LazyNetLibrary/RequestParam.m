@@ -1,5 +1,5 @@
 //
-//  ReuqestParam.m
+//  RequestParam.m
 //  WeiJiFIN
 //  请求需要的相关参数
 //  Created by 江钰锋 on 2017/1/9.

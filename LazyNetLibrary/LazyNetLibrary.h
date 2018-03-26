@@ -23,6 +23,6 @@ FOUNDATION_EXPORT const unsigned char LazyNetLibraryVersionString[];
 #import "LazyHttpClient+LazySynchro.h"
 #import "LazyNetLogger.h"
 #import "NSString+Coding.h"
-#import "ReuqestParam.h"
+#import "RequestParam.h"
 #import "ResponseProcess.h"
 #import "ResponseCallback.h"
