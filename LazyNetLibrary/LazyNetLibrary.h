@@ -15,11 +15,6 @@ FOUNDATION_EXPORT double LazyNetLibraryVersionNumber;
 FOUNDATION_EXPORT const unsigned char LazyNetLibraryVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <LazyNetLibrary/PublicHeader.h>
-
-#import <AFNetworking/AFNetworking.h>
-#import <PINCache/PINCache.h>
-#import <MJExtension/MJExtension.h>
-#import <CommonCrypto/CommonDigest.h>
 #import "HttpClient.h"
 #import "HttpClient+Synchro.h"
 #import "JSONResponseProcess.h"
