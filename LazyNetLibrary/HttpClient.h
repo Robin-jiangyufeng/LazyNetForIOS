@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking/AFHTTPSessionManager.h>
-#import <PINCache/PINCache.h>
+#import "AFHTTPSessionManager.h"
+#import "PINCache.h"
 #import "RequestParam.h"
 #import "ResponseProcess.h"
 #import "ResponseCallback.h"

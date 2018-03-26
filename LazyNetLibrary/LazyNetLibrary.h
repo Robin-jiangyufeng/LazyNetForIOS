@@ -6,7 +6,7 @@
 //  Copyright © 2017年 jiangyufeng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for LazyNetLibrary.
 FOUNDATION_EXPORT double LazyNetLibraryVersionNumber;
@@ -16,4 +16,18 @@ FOUNDATION_EXPORT const unsigned char LazyNetLibraryVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <LazyNetLibrary/PublicHeader.h>
 
-
+#import <AFNetworking/AFHTTPSessionManager.h>
+#import <PINCache/PINCache.h>
+#import <MJExtension/MJExtension.h>
+#import <CommonCrypto/CommonDigest.h>
+#import "HttpClient.h"
+#import "HttpClient+Synchro.h"
+#import "JSONResponseProcess.h"
+#import "JSONUtils.h"
+#import "LazyHttpClient.h"
+#import "LazyHttpClient+LazySynchro.h"
+#import "LazyNetLogger.h"
+#import "NSString+Coding.h"
+#import "ReuqestParam.h"
+#import "ResponseProcess.h"
+#import "ResponseCallback.h"
