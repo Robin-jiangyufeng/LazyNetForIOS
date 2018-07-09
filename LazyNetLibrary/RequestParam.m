@@ -122,21 +122,21 @@
  */
 -(void)addHeaders:(NSDictionary*)headers{
     if(!headers)return;
-    [_heasers setDictionary:headers];
+    [_heasers addEntriesFromDictionary:headers];
 }
 
 /**
  * 添加请求参数(健值对方式)
- * @param values
- * @param key
+ * @param value 请求的value
+ * @param key 请求去参数的key
  */
--(void)addBody:(NSString*)values withKey:(NSString*)key{
-    [_bodys setValue:values forKey:key];
+-(void)addBody:(NSString*)value withKey:(NSString*)key{
+    [_bodys setValue:value forKey:key];
 }
 
 /**
  * 添加请求方式(字典方式)
- * @param bodys
+ * @param bodys 请求bodys
  */
 -(void)addBodys:(NSDictionary*)bodys{
     if(!bodys)return;

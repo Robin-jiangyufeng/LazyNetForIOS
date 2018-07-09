@@ -139,10 +139,10 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
 
 /**
  * 添加请求参数(健值对方式)
- * @param values values
+ * @param value value
  * @param key key
  */
--(void)addBody:(NSString*)values withKey:(NSString*)key;
+-(void)addBody:(NSString*)value withKey:(NSString*)key;
 
 /**
  * 添加请求方式(字典方式)
