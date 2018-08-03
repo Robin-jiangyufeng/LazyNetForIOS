@@ -24,7 +24,6 @@
 -(instancetype)init{
     self=[super init];
     if (self) {
-        _viewControllerTasks=[[NSMutableDictionary alloc]init];
         [self setRequestSerializer:[AFJSONRequestSerializer serializer]];
         [self setResponseSerializer:[AFJSONResponseSerializer serializer]];
     }
@@ -141,9 +140,9 @@ callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate{
 -(void)addViewControllerTask:(NSString*)VCId
                withRequestId:(NSString*)requestId {
     if (!VCId||!requestId) return;
-    if (_viewControllerTasks) {
-        if ([[_viewControllerTasks allKeys] containsObject:VCId]) {
-            NSMutableArray*array = [_viewControllerTasks objectForKey:VCId];
+    if (self.viewControllerTasks) {
+        if ([[self.viewControllerTasks allKeys] containsObject:VCId]) {
+            NSMutableArray*array = [self.viewControllerTasks objectForKey:VCId];
             if (array) {
                 [array addObject:requestId];
             } else {
@@ -153,7 +152,7 @@ callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate{
         } else {
             NSMutableArray* array = [[NSMutableArray alloc]init];
             [array addObject:requestId];
-            [_viewControllerTasks setObject:array forKey:VCId];
+            [self.viewControllerTasks setObject:array forKey:VCId];
         }
     }
 }
@@ -164,14 +163,14 @@ callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate{
  * @param requestId 请求id
  */
 -(void)removeViewControllerTask:(NSString*) requestId {
-    [_viewControllerTasks enumerateKeysAndObjectsUsingBlock:^(NSString*  _Nonnull key, NSMutableArray*  _Nonnull obj, BOOL * _Nonnull stop) {
+    [self.viewControllerTasks enumerateKeysAndObjectsUsingBlock:^(NSString*  _Nonnull key, NSMutableArray*  _Nonnull obj, BOOL * _Nonnull stop) {
         if(obj){
             if([obj containsObject:requestId]){
                 [obj removeObject:requestId];
             }
         }
         if(!obj||obj.count<=0){
-            [_viewControllerTasks removeObjectForKey:key];
+            [self.viewControllerTasks removeObjectForKey:key];
         }
     }];
 }
@@ -179,24 +178,31 @@ callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate{
 /**
  * 取消与对应ViewController相关的所有请求
  *
- * @param VC
+ * @param VCId viewController的id
  */
 -(void)cancelViewControllerTask:(NSString*)VCId {
     if (!VCId) return;
-    if(_viewControllerTasks&&[[_viewControllerTasks allKeys] containsObject:VCId]){
-        NSMutableArray* array = [_viewControllerTasks objectForKey:VCId];
+    if(self.viewControllerTasks&&[[self.viewControllerTasks allKeys] containsObject:VCId]){
+        NSMutableArray* array = [self.viewControllerTasks objectForKey:VCId];
         if(array){
             [array enumerateObjectsUsingBlock:^(NSString* _Nonnull requestId, NSUInteger idx, BOOL * _Nonnull stop) {
                 [self cancelRequestWithId:requestId];
             }];
             [array removeAllObjects];
         }
-        [_viewControllerTasks removeObjectForKey:VCId];
+        [self.viewControllerTasks removeObjectForKey:VCId];
     }
 }
 
 -(void)removeTaskWithRequestId:(NSString *)requestId{
     [super removeTaskWithRequestId:requestId];
     [self removeViewControllerTask:requestId];
+}
+
+-(NSMutableDictionary*)viewControllerTasks{
+    if(!_viewControllerTasks){
+        _viewControllerTasks=[[NSMutableDictionary alloc]init];
+    }
+    return _viewControllerTasks;
 }
 @end
