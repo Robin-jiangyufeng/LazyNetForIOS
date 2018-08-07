@@ -14,7 +14,7 @@
 #import "LazyNetLogger.h"
 
 int const DEFAULT_OPERATION_QUEUE_SIZE=3;
-NSString* const HTTPCacheSaveName = @"TFLHttpCache";
+NSString* const HTTPCacheSaveName = @"HttpCache";
 @implementation HttpClient
 
 -(instancetype)init{
