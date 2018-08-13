@@ -444,8 +444,6 @@
 				4E288E3A1E306A2500C3DC38 /* Frameworks */,
 				4E288E3B1E306A2500C3DC38 /* Resources */,
 				4E288E8F1E306A5400C3DC38 /* Embed Frameworks */,
-				5C6EA64A1ABC51EBB68046C8 /* [CP] Embed Pods Frameworks */,
-				B01A53B0FB7BC86954C7E0B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -502,7 +500,6 @@
 				4E288E711E306A5300C3DC38 /* Frameworks */,
 				4E288E721E306A5300C3DC38 /* Headers */,
 				4E288E731E306A5300C3DC38 /* Resources */,
-				EB1AC0A5D0B3922BF4D0DA52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -647,51 +644,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5C6EA64A1ABC51EBB68046C8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyNetDemo/Pods-LazyNetDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B01A53B0FB7BC86954C7E0B1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyNetDemo/Pods-LazyNetDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EB1AC0A5D0B3922BF4D0DA52 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LazyNetLibrary/Pods-LazyNetLibrary-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FAC1E46CA132BD40C03F3FF1 /* [CP] Check Pods Manifest.lock */ = {
@@ -927,8 +879,9 @@
 				DEVELOPMENT_TEAM = 3VA89MX2F4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LazyNetDemo/LazyNetDemo.pch";
 				INFOPLIST_FILE = LazyNetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.NetLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -941,8 +894,9 @@
 				DEVELOPMENT_TEAM = 3VA89MX2F4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LazyNetDemo/LazyNetDemo.pch";
 				INFOPLIST_FILE = LazyNetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.NetLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1005,6 +959,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = LazyNetLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1026,6 +981,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = LazyNetLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robin.lazy.LazyNetLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
