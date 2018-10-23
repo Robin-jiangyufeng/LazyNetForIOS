@@ -46,6 +46,12 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  */
 -(instancetype _Nonnull)initWithBaseUrl:(NSString* _Nullable)baseUrl withCacheName:(NSString* _Nullable)cacheName withCahePath:(NSString* _Nullable)cachePath;
 
+/**
+ * 设置代理
+ * @param porxy 代理
+ */
+-(void)setPorxy:(NSDictionary*)porxy;
+
 /***
  * 加载urlsession配置
  * (可以用于设置代理等等)

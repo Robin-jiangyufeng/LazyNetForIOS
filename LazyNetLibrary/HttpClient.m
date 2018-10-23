@@ -64,6 +64,11 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
     return config;
 }
 
+-(void)setPorxy:(NSDictionary*)porxy{
+    if(!porxy)return;
+    _httpSessionManager.session.configuration.connectionProxyDictionary=porxy;
+}
+
 /**
  * 初始化缓存管理工具
  *
