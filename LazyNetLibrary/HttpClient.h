@@ -46,12 +46,6 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  */
 -(instancetype _Nonnull)initWithBaseUrl:(NSString* _Nullable)baseUrl withCacheName:(NSString* _Nullable)cacheName withCahePath:(NSString* _Nullable)cachePath;
 
-/**
- * 设置代理
- * @param porxy 代理
- */
--(void)setPorxy:(NSDictionary*)porxy;
-
 /***
  * 加载urlsession配置
  * (可以用于设置代理等等)
@@ -59,7 +53,13 @@ typedef NSURLSessionTask LazyBURLSessionTask;
 -(NSURLSessionConfiguration*_Nullable)loadURLSessionConfiguration;
 
 /**
- * 设置最大的并发请求数量
+ * 设置代理(此方法暂时无效)
+ * @param porxy 代理
+ */
+-(void)setPorxy:(NSDictionary*)porxy;
+
+/**
+ * 设置最大的并发请求数量(此方法暂时无效)
  *
  */
 -(void)setMaxOperationQueueSize:(int)size;
