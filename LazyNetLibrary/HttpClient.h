@@ -23,15 +23,10 @@ typedef NS_ENUM(NSUInteger, HttpRequestModel) {
 typedef NSURLSessionTask LazyBURLSessionTask;
 
 @interface HttpClient : NSObject{
-    /**base地址*/
-    NSString*_baseUrl;
-    /**缓存操作管理*/
-    PINCache* _cacheManager;
-    /**AFNetworking客户端*/
-    AFHTTPSessionManager*_httpSessionManager;
-    /**所有任务*/
-    NSMutableDictionary*_tasks;
+
 }
+/**AFNetworking客户端*/
+@property (nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
 /**
  * 构造方法
  */

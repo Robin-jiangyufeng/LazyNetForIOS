@@ -32,18 +32,7 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
 @property (nonatomic, assign) NSError* __autoreleasing*error;
 @end
 
-@interface RequestParam : NSObject{
-    /**请求id*/
-    NSString*_requestId;
-    /**请求地址*/
-    NSString*_url;
-    /**请求头*/
-    NSMutableDictionary*_heasers;
-    /**请求体*/
-    NSMutableDictionary*_bodys;
-    /**请求头*/
-    NSMutableDictionary*_files;
-}
+@interface RequestParam : NSObject
 
 /**请求超时时间*/
 @property (nonatomic) int request_timeout;

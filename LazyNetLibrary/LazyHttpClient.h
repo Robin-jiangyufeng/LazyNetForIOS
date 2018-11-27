@@ -10,8 +10,6 @@
 
 @interface LazyHttpClient : HttpClient{
 }
-/**所有的viewController请求任务*/
-@property(nonatomic,strong)NSMutableDictionary*viewControllerTasks;
 
 /**获取默认的请求单例*/
 + (instancetype)getInstance;

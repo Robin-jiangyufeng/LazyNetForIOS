@@ -15,6 +15,15 @@
 
 int const DEFAULT_OPERATION_QUEUE_SIZE=3;
 NSString* const HTTPCacheSaveName = @"HttpCache";
+@interface HttpClient (){
+    /**base地址*/
+    NSString *_baseUrl;
+    /**缓存操作管理*/
+    PINCache *_cacheManager;
+}
+/**所有任务*/
+@property (nonatomic, strong) NSMutableDictionary *tasks;
+@end
 @implementation HttpClient
 
 -(instancetype)init{
@@ -35,7 +44,6 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
         [AFNetworkActivityIndicatorManager sharedManager].enabled=YES;
         [self initCacheWithCacheName:cacheName withCahePath:cachePath ];
         [self initSessionManagerWithBaseUrl:baseUrl];
-        _tasks=[[NSMutableDictionary alloc]init];
     }
     return self;
 }
@@ -46,17 +54,17 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
  */
 -(void)initSessionManagerWithBaseUrl:(NSString *)baseUrl{
     _baseUrl=baseUrl;
-    _httpSessionManager=[[AFHTTPSessionManager alloc]initWithSessionConfiguration:[self loadURLSessionConfiguration]];
-    _httpSessionManager.requestSerializer=[AFHTTPRequestSerializer serializer];
-    _httpSessionManager.responseSerializer=[AFHTTPResponseSerializer serializer];
-    _httpSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
+    self.httpSessionManager=[[AFHTTPSessionManager alloc]initWithSessionConfiguration:[self loadURLSessionConfiguration]];
+    self.httpSessionManager.requestSerializer=[AFHTTPRequestSerializer serializer];
+    self.httpSessionManager.responseSerializer=[AFHTTPResponseSerializer serializer];
+    self.httpSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
                                                                                           @"text/html",
                                                                                           @"text/json",
                                                                                           @"text/plain",
                                                                                           @"text/javascript",
                                                                                           @"text/xml",
                                                                                           @"image/*"]];
-    _httpSessionManager.operationQueue.maxConcurrentOperationCount=DEFAULT_OPERATION_QUEUE_SIZE;//最大并发数
+    self.httpSessionManager.operationQueue.maxConcurrentOperationCount=DEFAULT_OPERATION_QUEUE_SIZE;//最大并发数
 }
 
 -(NSURLSessionConfiguration*)loadURLSessionConfiguration{
@@ -66,7 +74,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
 
 -(void)setPorxy:(NSDictionary*)porxy{
     if(!porxy)return;
-    _httpSessionManager.session.configuration.connectionProxyDictionary=porxy;
+    self.httpSessionManager.session.configuration.connectionProxyDictionary=porxy;
 }
 
 /**
@@ -85,36 +93,36 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
 
 -(void)setMaxOperationQueueSize:(int)size{
     if(size>0){
-        _httpSessionManager.operationQueue.maxConcurrentOperationCount=size;
+        self.httpSessionManager.operationQueue.maxConcurrentOperationCount=size;
     }
 }
 
 -(void)setSecurityPolicy:(AFSecurityPolicy *)securityPolicy{
-    _httpSessionManager.securityPolicy=securityPolicy;
+    self.httpSessionManager.securityPolicy=securityPolicy;
 }
 
 -(AFHTTPRequestSerializer*)getRequestSerializer{
-    return _httpSessionManager.requestSerializer;
+    return self.httpSessionManager.requestSerializer;
 }
 
 
 -(AFHTTPResponseSerializer*)getResponseSerializer{
-    return _httpSessionManager.responseSerializer;
+    return self.httpSessionManager.responseSerializer;
 }
 
 -(void)setRequestSerializer:(AFHTTPRequestSerializer*)requestSerializer{
     if(requestSerializer){
-        if(!_httpSessionManager.requestSerializer||![_httpSessionManager.requestSerializer isKindOfClass:requestSerializer.class]){
-            _httpSessionManager.requestSerializer=requestSerializer;
+        if(!self.httpSessionManager.requestSerializer||![self.httpSessionManager.requestSerializer isKindOfClass:requestSerializer.class]){
+            self.httpSessionManager.requestSerializer=requestSerializer;
         }
     }
 }
 
 -(void)setResponseSerializer:(AFHTTPResponseSerializer*)responseSerializer{
     if(responseSerializer){
-        if(!_httpSessionManager.responseSerializer||![_httpSessionManager.responseSerializer isKindOfClass:responseSerializer.class]){
-            _httpSessionManager.responseSerializer=responseSerializer;
-            _httpSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
+        if(!self.httpSessionManager.responseSerializer||![self.httpSessionManager.responseSerializer isKindOfClass:responseSerializer.class]){
+            self.httpSessionManager.responseSerializer=responseSerializer;
+            self.httpSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
                                                                                                   @"text/html",
                                                                                                   @"text/json",
                                                                                                   @"text/plain",
@@ -125,13 +133,14 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
     }
 }
 
--(NSString *)baseUrl{
-    return _baseUrl;
-}
-
 -(void)updateBaseUrl:(NSString *)baseUrl{
     _baseUrl=baseUrl;
 }
+
+- (NSString *_Nullable)baseUrl{
+    return _baseUrl;
+}
+
 
 -(LazyBURLSessionTask *)doGet:(RequestParam*)param
               responseProcess:(ResponseProcess*)responseProcess
@@ -208,17 +217,17 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
     if(!responseProcess){//没有设置反馈数据加工器则设置默认的
         responseProcess=[[ResponseProcess alloc]init];
     }
-    [_httpSessionManager.requestSerializer setTimeoutInterval:param.request_timeout];//设置超时
+    [self.httpSessionManager.requestSerializer setTimeoutInterval:param.request_timeout];//设置超时
     [[param headers]enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         //设置请求头
-        [_httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
+        [self.httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
     }];
     [self loadCache:param.cacheLoadType withRequestParam:param
                                loadingDelegate:loadingDelegate withRequestLoadCacheBlock:loadCache withCallbackDelegate:delegate withResponseProcess:responseProcess];//处理缓存
     LazyBURLSessionTask *session = nil;
     switch (httpMethod) {
         case RequestModel_GET:{
-            session = [_httpSessionManager GET:absoluteURL parameters:[param bodys] progress:^(NSProgress * _Nonnull downloadProgress) {
+            session = [self.httpSessionManager GET:absoluteURL parameters:[param bodys] progress:^(NSProgress * _Nonnull downloadProgress) {
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 //成功反馈
                 [self requestSuccess:param
@@ -239,7 +248,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
             }];}
             break;
         case RequestModel_POST:{
-            session = [_httpSessionManager POST:absoluteURL parameters:[param bodys] progress:^(NSProgress * _Nonnull downloadProgress) {
+            session = [self.httpSessionManager POST:absoluteURL parameters:[param bodys] progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 //成功反馈
@@ -261,7 +270,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
             }];}
             break;
         case RequestModel_POST_FORM:{
-            session = [_httpSessionManager POST:absoluteURL parameters:[param bodys] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {//添加表单数据
+            session = [self.httpSessionManager POST:absoluteURL parameters:[param bodys] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {//添加表单数据
                 if(param&&param.files&&param.files.count>0){
                     for(NSString *key in param.files){
                         FileInfor*fileInfor=param.files[key];
@@ -365,14 +374,14 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:absoluteURL]];
 
-    [_httpSessionManager.requestSerializer setTimeoutInterval:param.request_timeout];//设置超时
+    [self.httpSessionManager.requestSerializer setTimeoutInterval:param.request_timeout];//设置超时
     [[param headers]enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         //设置请求头
-        [_httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
+        [self.httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
     }];
         
     LazyBURLSessionTask *session = nil;
-    session = [_httpSessionManager uploadTaskWithRequest:request fromFile:[NSURL URLWithString:uploadFile] progress:^(NSProgress * _Nonnull uploadProgress) {
+    session = [self.httpSessionManager uploadTaskWithRequest:request fromFile:[NSURL URLWithString:uploadFile] progress:^(NSProgress * _Nonnull uploadProgress) {
         //上传进度
         [self requestProgress:param progress:uploadProgress callbackdelegate:delegate progressBlock:progress];
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
@@ -438,7 +447,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
     }
     NSURLRequest *downloadRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[param url]]];
     LazyBURLSessionTask *session = nil;
-    session = [_httpSessionManager downloadTaskWithRequest:downloadRequest progress:^(NSProgress * _Nonnull downloadProgress) {
+    session = [self.httpSessionManager downloadTaskWithRequest:downloadRequest progress:^(NSProgress * _Nonnull downloadProgress) {
         //下载进度
         [self requestProgress:param progress:downloadProgress callbackdelegate:delegate progressBlock:progressBlock];
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
@@ -620,8 +629,18 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
 }
 
 /**
+ 请求任务
+ */
+-(NSMutableDictionary*)tasks{
+    if(_tasks){
+        _tasks=[[NSMutableDictionary alloc]init];
+    }
+    return _tasks;
+}
+
+/**
  * 拼接地址得到全路径地址
- * @param url
+ * @param url url
  */
 -(NSString*)absoluteURL:(nonnull NSString*)url{
     if(!_baseUrl||[_baseUrl isEqualToString:@""])return url;
@@ -633,14 +652,14 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
  根据id判断任务是让已经存在
  */
 -(BOOL)isExistOfTask:(NSString*)requestId{
-    return [[_tasks allKeys]containsObject:requestId];
+    return [[self.tasks allKeys]containsObject:requestId];
 }
 
 /**
  * 得到当前任务数量
  */
 -(NSUInteger)taskCount{
-    return [_tasks count];
+    return [self.tasks count];
 }
 
 /**
@@ -650,7 +669,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
  */
 -(void)addTaskWithRequestId:(NSString*)requestId task:(LazyBURLSessionTask*)task{
     if(!task)return;
-    [_tasks setObject:task forKey:requestId];
+    [self.tasks setObject:task forKey:requestId];
 }
 
 /**
@@ -661,7 +680,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
 -(void)removeTaskWithRequestId:(NSString*)requestId {
     if(!requestId)return;
     @synchronized(self) {
-        [_tasks removeObjectForKey:requestId];
+        [self.tasks removeObjectForKey:requestId];
     };
 }
 
@@ -670,26 +689,26 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
  * @param requestId 请求id
  */
 -(LazyBURLSessionTask*)getTaskWithRequestId:(NSString*)requestId{
-    return [_tasks objectForKey:requestId];
+    return [self.tasks objectForKey:requestId];
 }
 
 -(void)cancelRequestWithId:(NSString *)requestId{
     if(!requestId)return;
     @synchronized(self) {
-        LazyBURLSessionTask*task=[_tasks objectForKey:requestId];
+        LazyBURLSessionTask*task=[self.tasks objectForKey:requestId];
         [task cancel];
-        [_tasks removeObjectForKey:requestId];
+        [self.tasks removeObjectForKey:requestId];
     };
 }
 
 -(void)cancelAllRequest{
     @synchronized(self) {
-        [_tasks enumerateKeysAndObjectsUsingBlock:^(NSString*  _Nonnull key, LazyBURLSessionTask* _Nonnull task, BOOL * _Nonnull stop) {
+        [self.tasks enumerateKeysAndObjectsUsingBlock:^(NSString*  _Nonnull key, LazyBURLSessionTask* _Nonnull task, BOOL * _Nonnull stop) {
             if ([task isKindOfClass:[LazyBURLSessionTask class]]) {
                 [task cancel];
             }
         }];
-        [_tasks removeAllObjects];
+        [self.tasks removeAllObjects];
     };
 }
 

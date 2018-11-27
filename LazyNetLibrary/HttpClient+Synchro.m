@@ -47,13 +47,13 @@
         LazyNetLogWarn(@"URLString无效，无法生成URL。可能是URL中有中文，请尝试Encode URL");
         return nil;
     }
-    [_httpSessionManager.requestSerializer setTimeoutInterval:param.request_timeout];//设置超时
+    [self.httpSessionManager.requestSerializer setTimeoutInterval:param.request_timeout];//设置超时
     [[param headers]enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         //设置请求头
-        [_httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
+        [self.httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
     }];
     if ([NSThread isMainThread]) {
-        if (_httpSessionManager.completionQueue == nil || _httpSessionManager.completionQueue == dispatch_get_main_queue()) {
+        if (self.httpSessionManager.completionQueue == nil || self.httpSessionManager.completionQueue == dispatch_get_main_queue()) {
             @throw
             [NSException exceptionWithName:NSInvalidArgumentException
                                     reason:@"Can't make a synchronous request on the same queue as the completion handler"
@@ -71,7 +71,7 @@
         method=@"POST";
     }
     NSURLSessionDataTask *task =
-    [_httpSessionManager dataTaskWithHTTPMethod:method
+    [self.httpSessionManager dataTaskWithHTTPMethod:method
                        URLString:absoluteURL
                       parameters:[param bodys]
                   uploadProgress:nil

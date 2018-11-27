@@ -7,7 +7,11 @@
 //
 
 #import "LazyHttpClient.h"
-
+@interface LazyHttpClient (){
+}
+/**所有的viewController请求任务*/
+@property(nonatomic,strong)NSMutableDictionary*viewControllerTasks;
+@end
 @implementation LazyHttpClient
 
 + (instancetype)getInstance
