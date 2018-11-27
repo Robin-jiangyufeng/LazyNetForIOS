@@ -10,18 +10,7 @@
 #import "JSONUtils.h"
 @implementation FileInfor
 @end
-@interface RequestParam (){
-    /**请求id*/
-    NSString*_requestId;
-    /**请求地址*/
-    NSString*_url;
-    /**请求头*/
-    NSMutableDictionary*_heasers;
-    /**请求体*/
-    NSMutableDictionary*_bodys;
-    /**请求头*/
-    NSMutableDictionary*_files;
-}
+@interface RequestParam ()
 
 @end
 @implementation RequestParam
