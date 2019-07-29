@@ -34,7 +34,7 @@
     return self;
 }
 
--(void)GET_JSON:(NSString*)VCId
+-(LazyBURLSessionTask *)GET_JSON:(NSString*)VCId
           param:(RequestParam*)param
   responseProcess:(JSONResponseProcess*)responseProcess
 loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -51,9 +51,10 @@ loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
+    return task;
 }
 
--(void)GET_JSON:(NSString*)VCId
+-(LazyBURLSessionTask *)GET_JSON:(NSString*)VCId
           param:(RequestParam*)param
   responseProcess:(JSONResponseProcess*)responseProcess
 loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -66,9 +67,10 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
+    return task;
 }
 
--(void)POST_JSON:(NSString*)VCId
+-(LazyBURLSessionTask *)POST_JSON:(NSString*)VCId
            param:(RequestParam*)param
    responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -81,9 +83,10 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
+    return task;
 }
 
--(void)POST_JSON:(NSString*)VCId
+-(LazyBURLSessionTask *)POST_JSON:(NSString*)VCId
            param:(RequestParam*)param
    responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -100,9 +103,10 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
+    return task;
 }
 
--(void)POST_FORM:(NSString *)VCId
+-(LazyBURLSessionTask *)POST_FORM:(NSString *)VCId
            param:(RequestParam *)param
  responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -114,9 +118,10 @@ callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate{
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
+    return task;
 }
 
--(void)POST_FORM:(NSString *)VCId
+-(LazyBURLSessionTask *)POST_FORM:(NSString *)VCId
            param:(RequestParam *)param
  responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -133,6 +138,7 @@ callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate{
     if(task){
         [self addViewControllerTask:VCId withRequestId:[param requestId]];
     }
+    return task;
 }
 
 /**

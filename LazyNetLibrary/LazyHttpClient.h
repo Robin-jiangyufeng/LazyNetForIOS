@@ -24,7 +24,7 @@
  * @param success 上传成功反馈
  * @param fail 上传失败反馈
  */
--(void)GET_JSON:(NSString*)VCId
+-(LazyBURLSessionTask *_Nullable)GET_JSON:(NSString*)VCId
           param:(RequestParam*)param
   responseProcess:(JSONResponseProcess*)responseProcess
 loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -40,7 +40,7 @@ loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
  * @param loadingDelegate 上传进度反馈
  * @param delegate 请求反馈处理的代理
  */
--(void)GET_JSON:(NSString*)VCId
+-(LazyBURLSessionTask *_Nullable)GET_JSON:(NSString*)VCId
           param:(RequestParam*)param
   responseProcess:(JSONResponseProcess*)responseProcess
 loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -54,7 +54,7 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate;
  * @param loadingDelegate 上传进度反馈
  * @param delegate 请求反馈处理的代理
  */
--(void)POST_JSON:(NSString*)VCId
+-(LazyBURLSessionTask *_Nullable)POST_JSON:(NSString*)VCId
            param:(RequestParam*)param
    responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -70,7 +70,7 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate;
  * @param success 上传成功反馈
  * @param fail 上传失败反馈
  */
--(void)POST_JSON:(NSString*)VCId
+-(LazyBURLSessionTask *_Nullable)POST_JSON:(NSString*)VCId
            param:(RequestParam*)param
    responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -86,7 +86,7 @@ callbackdelegate:(id<ResponseCallbackDelegate>)delegate;
  * @param loadingDelegate 上传进度反馈
  * @param delegate 反馈代理
  */
--(void)POST_FORM:(NSString*)VCId
+-(LazyBURLSessionTask *_Nullable)POST_FORM:(NSString*)VCId
            param:(RequestParam*)param
    responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate
@@ -104,7 +104,7 @@ callbackdelegate:(id<ResponseCallbackProgressDelegate>)delegate;
  * @param success 上传成功反馈
  * @param fail 上传失败反馈
  */
--(void)POST_FORM:(NSString*)VCId
+-(LazyBURLSessionTask *_Nullable)POST_FORM:(NSString*)VCId
            param:(RequestParam*)param 
    responseProcess:(JSONResponseProcess*)responseProcess
  loadingDelegate:(id<LoadingViewDelegate>)loadingDelegate

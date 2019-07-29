@@ -107,7 +107,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param success 上传成功反馈
  * @param fail 上传失败反馈
  */
--(LazyBURLSessionTask *_Nonnull)doGet:(RequestParam*_Nonnull)param
+-(LazyBURLSessionTask *_Nullable)doGet:(RequestParam*_Nonnull)param
                       responseProcess:(ResponseProcess*_Nullable)responseProcess
                       loadingDelegate:(_Nullable id <LoadingViewDelegate>)loadingDelegate
                             loadCache:(RequestLoadCacheBlock _Nullable )loadCache
@@ -121,7 +121,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param loadingDelegate 上传进度反馈
  * @param delegate 请求反馈处理的代理
  */
--(LazyBURLSessionTask *_Nonnull)doGet:(RequestParam*_Nonnull)param
+-(LazyBURLSessionTask *_Nullable)doGet:(RequestParam*_Nonnull)param
                       responseProcess:(ResponseProcess*_Nullable)responseProcess
               loadingDelegate:(_Nullable id<LoadingViewDelegate>)loadingDelegate
              callbackdelegate:(_Nullable id<ResponseCallbackDelegate>)delegate;
@@ -135,7 +135,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param success 上传成功反馈
  * @param fail 上传失败反馈
  */
--(LazyBURLSessionTask *_Nonnull)doPost:(RequestParam*_Nonnull)param
+-(LazyBURLSessionTask *_Nullable)doPost:(RequestParam*_Nonnull)param
                responseProcess:(ResponseProcess*_Nullable)responseProcess
                loadingDelegate:(_Nullable id<LoadingViewDelegate>)loadingDelegate
                      loadCache:(_Nullable RequestLoadCacheBlock)loadCache
@@ -149,7 +149,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param loadingDelegate 上传进度反馈
  * @param delegate 请求反馈处理的代理
  */
--(LazyBURLSessionTask *_Nonnull)doPost:(RequestParam*_Nonnull)param
+-(LazyBURLSessionTask *_Nullable)doPost:(RequestParam*_Nonnull)param
                responseProcess:(ResponseProcess*_Nullable)responseProcess
                loadingDelegate:(_Nullable id<LoadingViewDelegate>)loadingDelegate
               callbackdelegate:(_Nullable id<ResponseCallbackDelegate>)delegate;
@@ -164,7 +164,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param success 上传成功反馈
  * @param fail 上传失败反馈
  */
--(LazyBURLSessionTask *_Nonnull)doFormPost:(RequestParam*_Nonnull)param
+-(LazyBURLSessionTask *_Nullable)doFormPost:(RequestParam*_Nonnull)param
                    responseProcess:(ResponseProcess*_Nullable)responseProcess
                    loadingDelegate:(_Nullable id<LoadingViewDelegate>)loadingDelegate
                           progress:(_Nullable RequestProgressBlock)progress
@@ -179,7 +179,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param loadingDelegate 上传进度反馈
  * @param delegate 上传反馈代理
  */
--(LazyBURLSessionTask *_Nonnull)doFormPost:(RequestParam*_Nonnull)param
+-(LazyBURLSessionTask *_Nullable)doFormPost:(RequestParam*_Nonnull)param
                    responseProcess:(ResponseProcess*_Nullable)responseProcess
                    loadingDelegate:(_Nullable id<LoadingViewDelegate>)loadingDelegate
                   callbackdelegate:(_Nullable id<ResponseCallbackProgressDelegate>)delegate;
@@ -190,7 +190,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param uploadFile 要上传的文件
  * @param delegate 上传反馈代理
  */
-- (LazyBURLSessionTask *_Nonnull)doUpload:(RequestParam*_Nonnull)param
+- (LazyBURLSessionTask *_Nullable)doUpload:(RequestParam*_Nonnull)param
                              file:(NSString *_Nonnull)uploadFile
                  callbackdelegate:(_Nullable id<ResponseCallbackProgressDelegate>)delegate;
 
@@ -202,7 +202,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param success 上传成功反馈
  * @param fail 上传失败反馈
  */
-- (LazyBURLSessionTask *_Nonnull)doUpload:(RequestParam*_Nonnull)param
+- (LazyBURLSessionTask *_Nullable)doUpload:(RequestParam*_Nonnull)param
                              file:(NSString *_Nonnull)uploadFile
                          progress:(_Nullable RequestProgressBlock)progress
                           success:(_Nullable RequestSuccessBlock)success
@@ -214,7 +214,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param saveToPath 下载文件保存路径
  * @param delegate 下载反馈的代理
  */
-- (LazyBURLSessionTask *_Nonnull)doDownload:(RequestParam*_Nonnull)param
+- (LazyBURLSessionTask *_Nullable)doDownload:(RequestParam*_Nonnull)param
                          saveToPath:(NSString *_Nonnull)saveToPath
                    callbackdelegate:(_Nullable id<ResponseCallbackProgressDelegate>)delegate;
 
@@ -226,7 +226,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * @param success 下载成功反馈
  * @param fail 下载失败反馈
  */
-- (LazyBURLSessionTask *_Nonnull)doDownload:(RequestParam*_Nonnull)param
+- (LazyBURLSessionTask *_Nullable)doDownload:(RequestParam*_Nonnull)param
                          saveToPath:(NSString *_Nonnull)saveToPath
                            progress:(_Nullable RequestProgressBlock)progressBlock
                             success:(_Nullable RequestSuccessBlock)success
