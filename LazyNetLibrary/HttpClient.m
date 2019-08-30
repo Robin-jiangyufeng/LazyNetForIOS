@@ -446,6 +446,10 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
         return nil;
     }
     NSURLRequest *downloadRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[param url]]];
+    [[param headers]enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        //设置请求头
+        [self.httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
+    }];
     LazyBURLSessionTask *session = nil;
     session = [self.httpSessionManager downloadTaskWithRequest:downloadRequest progress:^(NSProgress * _Nonnull downloadProgress) {
         //下载进度
