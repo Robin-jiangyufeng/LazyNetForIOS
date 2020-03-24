@@ -15,11 +15,12 @@
 @end
 @implementation RequestParam
 
--(instancetype)initWithUrl:(NSString *)url{
+-(instancetype)initWithUrl:(nonnull NSString *)url{
     return [self initWithRequestId:nil withUrl:url];
 }
 
--(instancetype)initWithRequestId:(NSString*)requestId withUrl:(NSString*)url{
+-(instancetype)initWithRequestId:(NSString*)requestId
+                         withUrl:(nonnull NSString*)url{
     self=[super init];
     if (self) {
         _url=url;
@@ -41,7 +42,7 @@
     return _requestId;
 }
 
--(void)setRequestId:(NSString*)requestId{
+-(void)setRequestId:(nonnull NSString*)requestId{
     _requestId=requestId;
 }
 
@@ -61,9 +62,10 @@
 
 /**
  * 设置单个请求头(会替换对应的key)
- * @param
+ * @param values values
+ * @param key key
  */
--(void)setHeader:(NSString*)values withKey:(NSString*)key{
+-(void)setHeader:(nonnull NSString*)values withKey:(nonnull NSString*)key{
     [_heasers setValue:values forKey:key];
 }
 
@@ -72,7 +74,7 @@
  * @param headers 请求头列表
  *
  */
--(void)setHeaders:(NSDictionary*)headers{
+-(void)setHeaders:(nonnull NSDictionary*)headers{
     [_heasers removeAllObjects];
     [_heasers setDictionary:headers];
 }
@@ -81,7 +83,7 @@
     return _files;
 }
 
--(void)addFile:(NSString *)name fileInfor:(FileInfor *)fileInfor{
+-(void)addFile:(nonnull NSString *)name fileInfor:(FileInfor *)fileInfor{
     if(_files){
         [_files setValue:fileInfor forKey:name];
     }
@@ -104,7 +106,7 @@
     }
 }
 
--(void)addFiles:(NSDictionary *)files{
+-(void)addFiles:(nonnull NSDictionary *)files{
     if(_files){
         [_files setDictionary:files];
     }
@@ -123,7 +125,7 @@
  * 添加请求头(不会替换)
  * @param headers 请求头列表
  */
--(void)addHeaders:(NSDictionary*)headers{
+-(void)addHeaders:(nonnull NSDictionary*)headers{
     if(!headers)return;
     [_heasers addEntriesFromDictionary:headers];
 }
@@ -133,7 +135,7 @@
  * @param value 请求的value
  * @param key 请求去参数的key
  */
--(void)addBody:(NSString*)value withKey:(NSString*)key{
+-(void)addBody:(nonnull id)value withKey:(nonnull NSString*)key{
     [_bodys setValue:value forKey:key];
 }
 
@@ -141,7 +143,7 @@
  * 添加请求方式(字典方式)
  * @param bodys 请求bodys
  */
--(void)addBodys:(NSDictionary*)bodys{
+-(void)addBodys:(nonnull NSDictionary*)bodys{
     if(!bodys)return;
     [_bodys addEntriesFromDictionary:bodys];
 }
@@ -150,7 +152,7 @@
  * 添加请求方式(普通对象方式)
  *
  */
--(void)addBodyOfObject:(id)bodys{
+-(void)addBodyOfObject:(nonnull id)bodys{
     if(!bodys)return;
     [self addBodys:[JSONUtils objectToDictionary:bodys]];
 }

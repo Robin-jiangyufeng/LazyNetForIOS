@@ -55,19 +55,19 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
  * @param requestId 请求id
  * @param url 请求地址
  */
--(instancetype)initWithRequestId:(NSString*)requestId withUrl:(NSString*)url;
+-(instancetype)initWithRequestId:(NSString*)requestId withUrl:(nonnull NSString*)url;
 
 /**
  * 请求参数构造方法
  * @param url 请求地址
  */
--(instancetype)initWithUrl:(NSString*)url;
+-(instancetype)initWithUrl:(nonnull NSString*)url;
 
 /**的到请求id*/
 -(NSString*)requestId;
 
 /**重置请求id*/
--(void)setRequestId:(NSString*)requestId;
+-(void)setRequestId:(nonnull NSString*)requestId;
 
 /**的到当前请求的唯一标识*/
 -(NSString*)getUniqueId;
@@ -83,14 +83,14 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
  * @param values values
  * @param key key
  */
--(void)setHeader:(NSString*)values withKey:(NSString*)key;
+-(void)setHeader:(nonnull NSString*)values withKey:(nonnull NSString*)key;
 
 /**
  * 设置请求头，此方法会替换之前设置的所有请求头
  * @param headers 请求头列表
  *
  */
--(void)setHeaders:(NSDictionary*)headers;
+-(void)setHeaders:(nonnull NSDictionary*)headers;
 
 /**获取要提交的表单*/
 -(NSDictionary*)files;
@@ -100,7 +100,7 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
  * @param name 名称
  * @param fileInfor 文件信息
  */
--(void)addFile:(NSString*)name fileInfor:(FileInfor*)fileInfor;
+-(void)addFile:(nonnull NSString*)name fileInfor:(FileInfor*)fileInfor;
 
 /***
  * 添加要上传的文件
@@ -123,7 +123,7 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
  *
  * @param files 文件列表
  */
--(void)addFiles:(NSDictionary*)files;
+-(void)addFiles:(nonnull NSDictionary*)files;
 
 /**获取body字典*/
 -(NSDictionary*)getBodys;
@@ -135,24 +135,24 @@ typedef NS_ENUM(NSUInteger, HttpCacheLoadType) {
  * 添加请求头(不会替换)
  * @param headers 请求头列表
  */
--(void)addHeaders:(NSDictionary*)headers;
+-(void)addHeaders:(nonnull NSDictionary*)headers;
 
 /**
  * 添加请求参数(健值对方式)
  * @param value value
  * @param key key
  */
--(void)addBody:(NSString*)value withKey:(NSString*)key;
+-(void)addBody:(nonnull id)value withKey:(nonnull NSString*)key;
 
 /**
  * 添加请求方式(字典方式)
  * @param bodys 请求参数
  */
--(void)addBodys:(NSDictionary*)bodys;
+-(void)addBodys:(nonnull NSDictionary*)bodys;
 
 /**
  * 添加请求方式(普通对象方式)
  *
  */
--(void)addBodyOfObject:(id)bodys;
+-(void)addBodyOfObject:(nonnull id)bodys;
 @end
