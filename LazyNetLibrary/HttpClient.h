@@ -26,7 +26,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
 
 }
 /**AFNetworking客户端*/
-@property (nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
+@property (nonatomic, strong) AFHTTPSessionManager * _Nonnull httpSessionManager;
 /**
  * 构造方法
  */
@@ -51,7 +51,7 @@ typedef NSURLSessionTask LazyBURLSessionTask;
  * 设置代理(此方法暂时无效)
  * @param porxy 代理
  */
--(void)setPorxy:(NSDictionary*)porxy;
+-(void)setPorxy:(NSDictionary*_Nullable)porxy;
 
 /**
  * 设置最大的并发请求数量(此方法暂时无效)

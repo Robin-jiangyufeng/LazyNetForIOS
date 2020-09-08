@@ -54,7 +54,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
  */
 -(void)initSessionManagerWithBaseUrl:(NSString *)baseUrl{
     _baseUrl=baseUrl;
-    self.httpSessionManager=[[AFHTTPSessionManager alloc]initWithSessionConfiguration:[self loadURLSessionConfiguration]];
+    self.httpSessionManager=[[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:_baseUrl] sessionConfiguration:[self loadURLSessionConfiguration]];
     self.httpSessionManager.requestSerializer=[AFHTTPRequestSerializer serializer];
     self.httpSessionManager.responseSerializer=[AFHTTPResponseSerializer serializer];
     self.httpSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
