@@ -218,16 +218,12 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
         responseProcess=[[ResponseProcess alloc]init];
     }
     [self.httpSessionManager.requestSerializer setTimeoutInterval:param.request_timeout];//设置超时
-    [[param headers]enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        //设置请求头
-        [self.httpSessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
-    }];
     [self loadCache:param.cacheLoadType withRequestParam:param
                                loadingDelegate:loadingDelegate withRequestLoadCacheBlock:loadCache withCallbackDelegate:delegate withResponseProcess:responseProcess];//处理缓存
     LazyBURLSessionTask *session = nil;
     switch (httpMethod) {
         case RequestModel_GET:{
-            session = [self.httpSessionManager GET:absoluteURL parameters:[param bodys] progress:^(NSProgress * _Nonnull downloadProgress) {
+            session = [self.httpSessionManager GET:absoluteURL parameters:[param bodys] headers:[param headers] progress:^(NSProgress * _Nonnull downloadProgress) {
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 //成功反馈
                 [self requestSuccess:param
@@ -248,7 +244,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
             }];}
             break;
         case RequestModel_POST:{
-            session = [self.httpSessionManager POST:absoluteURL parameters:[param bodys] progress:^(NSProgress * _Nonnull downloadProgress) {
+            session = [self.httpSessionManager POST:absoluteURL parameters:[param bodys] headers:[param headers] progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 //成功反馈
@@ -270,7 +266,7 @@ NSString* const HTTPCacheSaveName = @"HttpCache";
             }];}
             break;
         case RequestModel_POST_FORM:{
-            session = [self.httpSessionManager POST:absoluteURL parameters:[param bodys] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {//添加表单数据
+            session = [self.httpSessionManager POST:absoluteURL parameters:[param bodys] headers:[param headers] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {//添加表单数据
                 if(param&&param.files&&param.files.count>0){
                     for(NSString *key in param.files){
                         FileInfor*fileInfor=param.files[key];

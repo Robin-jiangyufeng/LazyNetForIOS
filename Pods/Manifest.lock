@@ -1,21 +1,28 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - MJExtension (3.0.15.1)
-  - PINCache (2.3)
+  - MJExtension (3.2.2)
+  - PINCache (3.0.2):
+    - PINCache/Arc-exception-safe (= 3.0.2)
+    - PINCache/Core (= 3.0.2)
+  - PINCache/Arc-exception-safe (3.0.2):
+    - PINCache/Core
+  - PINCache/Core (3.0.2):
+    - PINOperation (~> 1.2.0)
+  - PINOperation (1.2)
 
 DEPENDENCIES:
   - AFNetworking
@@ -27,12 +34,14 @@ SPEC REPOS:
     - AFNetworking
     - MJExtension
     - PINCache
+    - PINOperation
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  PINCache: bea7c404c360f6fe0f6ee783c5cd14e778fa2aab
+  PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
 
-PODFILE CHECKSUM: bc20403f6397afa8ffb587f1784a5a9ba600c2e1
+PODFILE CHECKSUM: 18d75fd92eefb5c943c730e6a9c71faf109b9507
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.5
