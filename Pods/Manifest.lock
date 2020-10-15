@@ -15,33 +15,24 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - MJExtension (3.2.2)
-  - PINCache (3.0.2):
-    - PINCache/Arc-exception-safe (= 3.0.2)
-    - PINCache/Core (= 3.0.2)
-  - PINCache/Arc-exception-safe (3.0.2):
-    - PINCache/Core
-  - PINCache/Core (3.0.2):
-    - PINOperation (~> 1.2.0)
-  - PINOperation (1.2)
+  - PINCache (2.3)
 
 DEPENDENCIES:
   - AFNetworking
   - MJExtension
-  - PINCache
+  - PINCache (~> 2.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - MJExtension
     - PINCache
-    - PINOperation
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
-  PINCache: bea7c404c360f6fe0f6ee783c5cd14e778fa2aab
-  PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
 
-PODFILE CHECKSUM: 18d75fd92eefb5c943c730e6a9c71faf109b9507
+PODFILE CHECKSUM: c2a305f0fd20aa0f2f00972a4b611ec008ee23fe
 
 COCOAPODS: 1.7.5
